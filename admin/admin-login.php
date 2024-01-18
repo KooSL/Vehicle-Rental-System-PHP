@@ -12,7 +12,7 @@
 <body>
     <!--Header-->
     <?php
-        include 'admin-container\admin-header.php';
+        include 'admin-container\admin-login-header.php';
     ?>
 
         <form action="" class="login-form" method="POST">
@@ -21,13 +21,13 @@
             <input type="text" name="email" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             </div>
-            <p><a href="" class="e-option">Forget Password?</a></p>
+            <p><a href="..\update-password.php" class="e-option">Forget Password?</a></p>
             <input type="submit" value="Login">
             <!-- <p><a href="sign-up.php" class="e-option">Create new account</a></p> -->
         </form>
 
         <?php
-            include 'admin-container\admin-footer.php';
+            include 'admin-container\admin-login-footer.php';
         ?>
 
 </body>
