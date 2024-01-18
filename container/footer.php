@@ -1,7 +1,7 @@
 <footer>
         <div class="row">
             <div class="col">
-                <h3>Sadhan.com</h3>
+                <h3><i class="fa-solid fa-car"></i> Sadhan <i class="fa-solid fa-motorcycle"></i></h3>
                 <p>Nepal</p>
                 <p>info.sadhan@sadhan.com.np</p>
                 <p>056-1234<br>+9779812345678</p>

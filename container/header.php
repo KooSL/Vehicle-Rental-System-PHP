@@ -1,6 +1,6 @@
     <header>
         <!-- <a href="#" class="logo"><img src="/home/linuxkali/Documents/My-VSCode/Vehicle-Rental-System-2/images/jeep.png" alt=""></a> -->
-        <a href="home.php" class="logo">Sadhan.com</a>
+        <a href="home.php" class="logo"><i class="fa-solid fa-car"></i> Sadhan <i class="fa-solid fa-motorcycle"></i></a>
 
        <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
@@ -10,6 +10,7 @@
             <li><a href="reviews.php">Reviews</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="about.php">About</a></li>
+            <li><a href="admin\dashboard.php">Dashboard</a></li>
         </ul>
         <div class="header-btn">
             <!-- <a href="#" class="sign-up">Sign Up</a> -->
