@@ -58,7 +58,7 @@
         <div class="vehicles-container">
             <div class="box">
                 <div class="box-img">
-                    <a href=""><img src="images\about.png" alt=""></a>
+                    <img src="images\about.png" alt="">
                 </div>
                 <p>2023</p>
                 <h3>2017 Honda Civic</h3>

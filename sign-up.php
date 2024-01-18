@@ -22,18 +22,18 @@
     <div class="sign-up-form">
         <p class="signup-txt"><i class="fa-solid fa-user-plus"></i> Sign Up<p>
         <div class="s-inputs">
-        <input type="text" name="name" placeholder="Full Name">
-        <input type="text" name="address" placeholder="Address">
-        <input type="text" name="email" placeholder="Email">
-        <input type="text" name="number" placeholder="Phone Number">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="text" name="number" placeholder="Phone Number" required>
         <!-- <label for="gender">Gender</label>
         <select name="gender" id="gender">
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
         </select> -->
-        <input type="password" name="password" placeholder="New Password">
-        <input type="password" name="cpassword" placeholder="Confirm Password">
+        <input type="password" name="password" placeholder="New Password" required>
+        <input type="password" name="cpassword" placeholder="Confirm Password" required>
         </div>
         <h5></h5>
         <input type="submit" name="submit" value="Sign Up">

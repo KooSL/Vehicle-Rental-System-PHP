@@ -18,10 +18,10 @@
         <form action="" class="login-form" method="POST">
             <p class="login-txt"><i class="fa-solid fa-right-to-bracket"></i> Log In</p>
             <div class="l-inputs">
-            <input type="text" name="email" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="email" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
             </div>
-            <p><a href="" class="e-option">Forget Password?</a></p>
+            <p><a href="update-password.php" class="e-option">Forget Password?</a></p>
             <input type="submit" value="Login">
             <p><a href="sign-up.php" class="e-option">Create new account</a></p>
         </form>
