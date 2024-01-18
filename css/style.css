@@ -65,27 +65,24 @@ header{
 
 .navbar a{
     font-size: 1rem;
-    padding: 10px 15px;
+    padding: 0px 10px;
     color: var(--text-color);
     font-weight: 500;
 }
 
 .navbar a::after{
-    content: '';
-    width: 100%;
+    content: "";
+    width: 0;
     height: 2px;
-    /* background: var(--gradient); */
     position: absolute;
     bottom:-4px;
     left: 0;
-    opacity: 0;
     transition: all ease-in-out 0.2s;
-    background: gold;
+    background-color: gold;
 }
 
 .navbar a:hover::after{
-    /* width: 100%; */
-    opacity: 1;
+    width: 100%;
 }
 
 #menu-icon{
@@ -347,11 +344,17 @@ header{
 }
 
 .vehicles-container .box .box-img{
+    cursor: pointer;
     background-color: white;
     width: 100%;
     height: 200px;
     border-radius: 0.9rem;
+    transition: all ease-in-out 0.3s;
+}
+
+.vehicles-container .box .box-img:hover{
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.397);
+    transition: all ease-in-out 0.3s;
 }
 
 .vehicles-container .box .box-img img{
@@ -640,7 +643,6 @@ footer{
 .footer-menu{
     /* text-align: center; */
     line-height: 30px;
-    /* display: flex; */
     color: white;
 }
 
@@ -649,27 +651,26 @@ footer{
 }
 
 .footer-menu a{
+    display: inline-block;
     font-size: 1rem;
-    /* padding: 10px 15px; */
+    /* padding: 15px; */
     color: var(--text-color);
     font-weight: 500;
 }
 
 .footer-menu a::after{
-    content: '';
-    width: 100%;
+    content: "";
+    width: 0;
     height: 2px;
     position: absolute;
-    bottom: 0px;
+    bottom: -2px;
     left: 0;
-    opacity: 0;
     transition: all ease-in-out 0.2s;
     background: gold;
 }
 
 .footer-menu, a:hover::after{
     width: 100%;
-    opacity: 1;
 }
 
 .copyright{
@@ -819,7 +820,7 @@ footer{
 
 } */
 
-.signup-txt{
+.signup-txt, .contact-txt, .change-password-txt{
     color: rgb(0, 0, 0);
     font-size: 30px;
     font-weight: bold;
@@ -830,7 +831,7 @@ footer{
     color: rgb(0, 0, 0);
 }
 
-.sign-up{
+.sign-up, .contact, .update-password-form{
     width: 400px;
     margin: 100px auto;
     text-align: center;
@@ -840,7 +841,7 @@ footer{
     margin-top: 7%;
 }
 
-.sign-up .s-inputs input{
+.sign-up .s-inputs input, .contact .c-inputs input, .c-inputs textarea, .update-password-form .p-inputs input{
     text-align: center;
     padding: 10px;
     margin: 10px auto;
@@ -854,22 +855,22 @@ footer{
     border-radius: 18px;
 }
 
-.s-inputs input:hover{
+.s-inputs input:hover, .c-inputs input:hover, .c-inputs textarea:hover, .p-inputs input:hover{
     box-shadow: 2px 3px 13px gray;
     transition: all ease-in-out 0.3s;
     border-radius: 18px;
 }
 
-.sign-up input:focus {
+.sign-up input:focus, .c-inputs input:focus, .c-inputs textarea:focus, .p-inputs input:focus{
   border-color: blue;
 }
 
-.sign-up:hover{
+.sign-up:hover, .contact:hover, .update-password-form:hover{
     box-shadow: 0.5px 5px 20px black;
     transition: all ease-in-out 0.3s;
 }
 
-.sign-up input{
+.sign-up input, .contact input, .update-password-form input{
     text-align: center;
     padding: 10px;
     margin: 10px auto;
@@ -881,7 +882,12 @@ footer{
 
 }
 
-.sign-up input[type="submit"]{
+.c-inputs textarea::placeholder{
+    text-align: center;
+    /* padding: 30px; */
+}
+
+.sign-up input[type="submit"], .contact input[type="submit"], .update-password-form input[type="submit"]{
     border-radius: 0.9rem;
     background-color: blue;
     color: white;
@@ -889,8 +895,22 @@ footer{
     width: 20%;
     cursor: pointer;
 } 
+.change-pw-cancel{
+    border-radius: 0.9rem;
+    padding: 10px 13px;
+    border: none;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+.change-pw-cancel:hover{
+    color: black;
+    background-color: gold;
+}
 
-.sign-up input[type="submit"]:hover{
+.sign-up input[type="submit"]:hover, .contact input[type="submit"]:hover, .update-password-form input[type="submit"]:hover{
     color: black;
     background-color: gold;
     /* transition-duration: 0.3s; */
