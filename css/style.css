@@ -110,7 +110,7 @@ header{
 }
 
 .home{
-    background: url('images\Background-image-2.png');
+    background: url("images\Background-image-2.png");
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -861,7 +861,7 @@ footer{
     border-radius: 18px;
 }
 
-.sign-up input:focus, .c-inputs input:focus, .c-inputs textarea:focus, .p-inputs input:focus{
+.sign-up input:focus, .c-inputs input:focus, .c-inputs textarea:focus, .update-password-box input:focus, .update-c-password-box input:focus, .sign-up-password-box input:focus{
   border-color: blue;
 }
 
@@ -941,6 +941,50 @@ footer{
     line-height: 50px;
 }
 
+.sign-up-password-box, .sign-up-c-password-box{
+    /* background-color: rgb(255, 255, 255); */
+    display: flex;
+    align-items: center;
+    /* width: 70%; */
+    /* height: 40px; */
+    text-align: center;
+    /* border-radius: 18px; */
+    /* box-shadow: 2px 3px 5px gray; */
+    /* margin-left: 57px;
+    margin-bottom: 10px; */
+    /* border-width: 0 0 2px; */
+}
+
+.sign-up-password-box input, .sign-up-c-password-box input{
+    
+    box-shadow: 2px 3px 5px gray;
+    border-radius: 18px;
+    margin-left: 60px;
+    /* width: 100%; */
+    /* border: none; */
+    outline: none;
+    border-width: 0 0 2px;
+}
+
+.sign-up-password-box .fa-solid, .sign-up-c-password-box .fa-solid{
+    cursor: pointer;
+    padding-right: 25px;
+}
+
+/* .sign-up-password-box input::placeholder, .sign-up-c-password-box input::placeholder{
+    margin-left: -30px;
+} */
+
+.sign-up-password-box input:focus{
+    border-color: blue;
+}
+
+.sign-up-password-box input:hover, .sign-up-c-password-box input:hover{
+    box-shadow: 2px 3px 13px gray;
+    transition: all ease-in-out 0.3s;
+    border-radius: 18px;
+}
+
 .login-form{
     width: 400px;
     margin: 100px auto;
@@ -984,6 +1028,38 @@ input::placeholder{
     /* transition: all ease-in-out 0.3s; */
     border-radius: 18px;
 }
+
+.login-password-box, .admin-login-password-box, .update-password-box, .update-c-password-box{
+    display: flex;
+    align-items: center;
+    /* text-align: center; */
+}
+
+.login-password-box input, .admin-login-password-box input, .update-password-box input, .update-c-password-box input{
+    text-align: center;
+    padding: 10px;
+    /* margin: 10px auto; */
+    margin-left: 58px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: white;
+    /* display: block; */
+    width: 70%;
+    border-radius: 18px;
+    transition: all ease-in-out 0.3s;
+    box-shadow: 2px 3px 5px gray;
+}
+
+.login-password-box .fa-solid, .admin-login-password-box .fa-solid{
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.update-password-box .fa-solid, .update-c-password-box .fa-solid{
+    cursor: pointer;
+    padding-right: 25px;
+}
+
 
 .login-txt{
     color: rgb(0, 0, 0);
