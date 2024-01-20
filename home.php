@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/ae61999827.js"></script>
+    <script src="js\main.js"></script>
     <!-- <style>
         body{
             background-image: url('images\Background-image-2.png');
         }
-    </style>
-</head> -->
+    </style> -->
+</head>
 <body>
     <!--Header-->
     <?php
@@ -116,9 +117,7 @@
     
     <!--scrollReveal-->
     <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
-   
-    <!--Link To JS-->
-    <script src="/home/linuxkali/Documents/My-VSCode/Vehicle-Rental-System-2/JS/main.js"></script>
+    
 </body>
 </html>
 

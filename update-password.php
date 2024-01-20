@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css\style.css">
     <script src="https://kit.fontawesome.com/ae61999827.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="js\main.js"></script>
     <title>Update Password</title>
 </head>
 <body>
@@ -17,10 +18,15 @@
 
         <form action="" class="update-password-form" method="POST">
             <p class="change-password-txt"><i class="fa-solid fa-lock"></i> Change Password</p>
-            <div class="p-inputs">
-            <input type="password" name="n-password" placeholder="New Password" required>
-            <input type="password" name="c-password" placeholder="Confirm Password" required>
-            </div>
+                <div class="update-password-box">
+                    <input type="password" name="password" placeholder="New Password" id="updatepassword" required>
+                    <i class="fa-solid fa-eye-slash" id="updateeyeicon" aria-hidden="true" onclicK="updatetoggle()"></i>
+                </div>
+                <div class="update-c-password-box">
+                    <input type="password" name="password" placeholder="Confirm Password" id="cupdatepassword" required>
+                    <i class="fa-solid fa-eye-slash" id="cupdateeyeicon" aria-hidden="true" onclicK="cupdatetoggle()"></i>
+                </div>
+            
             <input type="submit" value="Update">
             <a href="login.php"><button type="button" class="change-pw-cancel">Cancel</button></a>
         </form>

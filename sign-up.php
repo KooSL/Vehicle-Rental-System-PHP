@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css\style.css">
     <script src="https://kit.fontawesome.com/ae61999827.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="js\main.js"></script>
     <title>Sign Up</title>
 </head>
 <body>
@@ -26,15 +27,22 @@
         <input type="text" name="address" placeholder="Address" required>
         <input type="text" name="email" placeholder="Email" required>
         <input type="text" name="number" placeholder="Phone Number" required>
+        </div>
         <!-- <label for="gender">Gender</label>
         <select name="gender" id="gender">
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
         </select> -->
-        <input type="password" name="password" placeholder="New Password" required>
-        <input type="password" name="cpassword" placeholder="Confirm Password" required>
+        <div class="sign-up-password-box">
+            <input type="password" name="password" placeholder="New Password" id="signuppassword" required>
+            <i class="fa-solid fa-eye-slash" id="eyeicon" aria-hidden="true" onclicK="toggle()"></i>
         </div>
+        <div class="sign-up-c-password-box">
+            <input type="password" name="password" placeholder="Confirm Password" id="csignuppassword" required>
+            <i class="fa-solid fa-eye-slash" id="ceyeicon" aria-hidden="true" onclicK="ctoggle()"></i>
+        </div>
+        
         <h5></h5>
         <input type="submit" name="submit" value="Sign Up">
         <p><a href="login.php" class="aha">Already have an account</a></p>
