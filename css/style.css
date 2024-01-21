@@ -110,7 +110,7 @@ header{
 }
 
 .home{
-    background: url("images\Background-image-2.png");
+    background-image: url("images/Background-image-2-5.png");
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -820,15 +820,26 @@ footer{
 
 } */
 
+.signup-body{
+    background-image: url("images/signup-bg-5.png");
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position:center right;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    /* grid-template-columns: repeat(2, 1fr); */
+}
+
 .signup-txt, .contact-txt, .change-password-txt{
-    color: rgb(0, 0, 0);
     font-size: 30px;
     font-weight: bold;
 }
 
-.sign-up h5 a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
+.signup-txt{
+    color: rgb(255, 255, 255);
 }
 
 .sign-up, .contact, .update-password-form{
@@ -839,6 +850,7 @@ footer{
     transition: all ease-in-out 0.3s;
     border-radius: 20px;
     margin-top: 7%;
+    /* background-color: white; */
 }
 
 .sign-up .s-inputs input, .contact .c-inputs input, .c-inputs textarea, .update-password-form .p-inputs input{
@@ -861,14 +873,19 @@ footer{
     border-radius: 18px;
 }
 
-.sign-up input:focus, .c-inputs input:focus, .c-inputs textarea:focus, .update-password-box input:focus, .update-c-password-box input:focus, .sign-up-password-box input:focus{
-  border-color: blue;
+.sign-up input:focus, .c-inputs input:focus, .c-inputs textarea:focus, .update-password-box input:focus, .update-c-password-box input:focus{
+  border-color: gold;
 }
 
 .sign-up:hover, .contact:hover, .update-password-form:hover{
     box-shadow: 0.5px 5px 20px black;
     transition: all ease-in-out 0.3s;
+    /* background-color: rgb(255, 255, 255); */
 }
+
+/* .signup-txt{
+    color: black;
+} */
 
 .sign-up input, .contact input, .update-password-form input{
     text-align: center;
@@ -941,18 +958,17 @@ footer{
     line-height: 50px;
 }
 
-.sign-up-password-box, .sign-up-c-password-box{
-    /* background-color: rgb(255, 255, 255); */
+.sign-up-password-box{
     display: flex;
     align-items: center;
-    /* width: 70%; */
-    /* height: 40px; */
+    height: 40px;
     text-align: center;
-    /* border-radius: 18px; */
-    /* box-shadow: 2px 3px 5px gray; */
-    /* margin-left: 57px;
-    margin-bottom: 10px; */
-    /* border-width: 0 0 2px; */
+}
+
+.sign-up-c-password-box{
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .sign-up-password-box input, .sign-up-c-password-box input{
@@ -964,9 +980,11 @@ footer{
     /* border: none; */
     outline: none;
     border-width: 0 0 2px;
+    transition: all ease-in-out 0.3s;
 }
 
 .sign-up-password-box .fa-solid, .sign-up-c-password-box .fa-solid{
+    color: white;
     cursor: pointer;
     padding-right: 25px;
 }
@@ -975,15 +993,27 @@ footer{
     margin-left: -30px;
 } */
 
-.sign-up-password-box input:focus{
+/* .sign-up-password-box input:focus{
     border-color: blue;
-}
+} */
 
 .sign-up-password-box input:hover, .sign-up-c-password-box input:hover{
     box-shadow: 2px 3px 13px gray;
     transition: all ease-in-out 0.3s;
     border-radius: 18px;
 }
+
+/* .login-body{
+    background-image: url("images/signup-bg-5.png");
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position:center right;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+} */
 
 .login-form{
     width: 400px;
@@ -1023,7 +1053,7 @@ input::placeholder{
     color: rgba(0, 8, 34, 0.658);
 }
 
-.l-inputs input:hover{
+.l-inputs input:hover, .login-password-box input:hover, .update-password-box input:hover, .update-c-password-box input:hover, .admin-login-password-box input:hover{
     box-shadow: 2px 3px 13px gray;
     /* transition: all ease-in-out 0.3s; */
     border-radius: 18px;
@@ -1033,6 +1063,7 @@ input::placeholder{
     display: flex;
     align-items: center;
     /* text-align: center; */
+    height: 60px;
 }
 
 .login-password-box input, .admin-login-password-box input, .update-password-box input, .update-c-password-box input{
