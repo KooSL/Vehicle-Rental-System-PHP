@@ -16,6 +16,7 @@
         include 'container\header.php';
     ?>
 
+    <div class="login-body">
         <form action="" class="login-form" method="POST">
             <p class="login-txt"><i class="fa-solid fa-right-to-bracket"></i> Log In</p>
             <div class="l-inputs">
@@ -29,6 +30,7 @@
             <input type="submit" value="Login">
             <p><a href="sign-up.php" class="e-option">Create new account</a></p>
         </form>
+    </div>
 
         <?php
             include 'container\footer.php';
