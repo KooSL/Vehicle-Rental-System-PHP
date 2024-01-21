@@ -45,7 +45,7 @@ var state = false;
 function toggle(){
     if(state){
         document.getElementById("signuppassword").setAttribute("type", "password")
-        document.getElementById("eyeicon").style.color = 'black'
+        document.getElementById("eyeicon").style.color = 'white'
         document.getElementById("eyeicon").classList.add("fa-eye-slash")
         document.getElementById("eyeicon").classList.remove("fa-eye")
         state = false;
@@ -62,7 +62,7 @@ function toggle(){
 function ctoggle(){
     if(state){
         document.getElementById("csignuppassword").setAttribute("type", "password")
-        document.getElementById("ceyeicon").style.color = 'black'
+        document.getElementById("ceyeicon").style.color = 'white'
         document.getElementById("ceyeicon").classList.add("fa-eye-slash")
         document.getElementById("ceyeicon").classList.remove("fa-eye")
         state = false;
