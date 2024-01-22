@@ -26,10 +26,6 @@ body{
     /* box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.397); */
 }
 
-.main{
-    
-}
-
 .grids{
     background-color: #eeeff1;
     display: grid;
@@ -88,8 +84,28 @@ body{
 
 .title{
     padding-left: 25px;
+    padding-right: 25px;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title p{
     font-weight: bold;
+}
+
+.title a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    padding: 5px 20px;
+    border-radius: 0.9rem;
+}
+
+.title a:hover{
+    background-color: gold;
+    color: black;
 }
 
 header{
@@ -176,4 +192,103 @@ header{
     position: absolute;
     /* bottom: 0; */
   }
+
+.booking-table, .vehicle-table, .customer-table, .category-table{
+    padding: 25px;
+    background-color: #eeeff1;
+    /* border-radius: 0.9rem; */
+}
   
+/* table, th, td {
+    border: 1px solid;
+} */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    height: 50px;
+    background-color: blue;
+    color: white;
+}
+
+td{
+    text-align: center;
+}
+
+td a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0.4rem;
+}
+
+td a:hover{
+    background-color: blue;
+    color: rgb(255, 255, 255);
+}
+
+.confirm{
+    background-color: green;
+}
+
+.cancel{
+    background-color: red;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(0, 119, 255, 0.158);
+}
+
+.add-vehicle{
+    background-color: #eeeff1;
+    padding-left: 25px;
+    padding-bottom: 25px;
+}
+
+.add-vehicle input, .add-vehicle select, .add-vehicle textarea{
+    /* width: 100%; */
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 0.5rem; 
+    border: none;
+    /* background-color: aliceblue; */
+    box-shadow: 2px 3px 5px gray;
+    outline: 0;
+    transition: all ease-in-out 0.3s;
+}
+
+.add-vehicle input:hover, .add-vehicle select:hover, .add-vehicle textarea:hover{
+    box-shadow: 2px 3px 13px gray;
+    transition: all ease-in-out 0.3s;
+}
+
+.add-vehicle button[type="submit"]{
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 0.5rem; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.add-vehicle button[type="submit"]:hover, .add-vehicle a:hover{
+    background-color: gold;
+    color: black;
+}
+
+.add-vehicle a{
+    text-decoration: none;
+    background-color: blue;
+    padding: 7px 20px;
+    color: white;
+    border: none;
+    border-radius: 0.5rem; 
+    cursor: pointer;
+}
+
