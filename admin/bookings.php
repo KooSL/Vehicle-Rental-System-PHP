@@ -20,34 +20,57 @@
     <section class="title">
       <p>Bookings</p>
     </section>
-    <!-- <div class="grids">
-      <div class="card">
-        <P>3</P>
-        <P>Bookings</P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <div class="card">
-        <P>Vehicles</P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <div class="card">
-        <P>Brands</P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <div class="card">
-        <P>3</P>
-        <P>Customers</P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <div class="card">
-        <P></P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <div class="card">
-        <P></P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-    </div> -->
+    <div class="booking-table">
+      <table>
+        <tr>
+          <th>S.N</th>
+          <th>Name</th>
+          <th>Vehicle</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Kushal Acharya</td>
+          <td>Toyota</td>
+          <td>2024-01-22</td>
+          <td>Confirmed</td>
+          <!-- <td>
+            <a href="">Confirm</a>
+            <a href="">Cancel</a>
+          </td> -->
+          <td>
+            <a href="#" class="confirm"><i class="fa-solid fa-check"></i></a>
+            <a href="#" class="cancel"><i class="fa-solid fa-xmark"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+        </tr>
+        <tr>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+        </tr>
+        <tr>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+          <td>dfgdg</td>
+        </tr>
+      </table>
+    </div>
     
   </main>
 </body>

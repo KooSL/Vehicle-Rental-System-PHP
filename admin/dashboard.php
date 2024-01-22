@@ -155,8 +155,8 @@
       </div>
       <div class="card">
         <P>3</P>
-        <P>Brands</P>
-        <a href="brands.php" class="btn">View Details</a>
+        <P>Categories</P>
+        <a href="categories.php" class="btn">View Details</a>
       </div>
       <div class="card">
         <P>3</P>

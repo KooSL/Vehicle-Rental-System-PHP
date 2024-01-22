@@ -18,28 +18,35 @@
   
   <main class="main">
     <section class="title">
-      <p>Customers</p>
+      <p>Categories</p>
     </section>
-    <div class="customer-table">
+    <div class="category-table">
       <table>
         <tr>
           <th>S.N</th>
           <th>Name</th>
-          <th>Address</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Reg. Date</th>
+          <th>Type</th>
+          <th>Fuel</th>
+          <th>Seats</th>
+          <th>Action</th>
         </tr>
         <tr>
           <td>1</td>
-          <td>Kushal Acharya</td>
-          <td>Toyota</td>
-          <td>2024-01-22</td>
-          <td>Confirmed</td>
-          <td>Confirm/Cancel</td>
+          <td>TATA</td>
+          <td>Car</td>
+          <td>Diesel</td>
+          <td>5</td>
+          <!-- <td>
+            <a href="">Confirm</a>
+            <a href="">Cancel</a>
+          </td> -->
+          <td>
+            <a href="#" class="confirm"><i class="fa-solid fa-pen"></i></a>
+            <a href="#" class="cancel"><i class="fa-solid fa-trash"></i></a>
+          </td>
         </tr>
         <tr>
-          <td>dfgdg</td>
+          <td>1</td>
           <td>dfgdg</td>
           <td>dfgdg</td>
           <td>dfgdg</td>
@@ -47,7 +54,7 @@
           <td>dfgdg</td>
         </tr>
         <tr>
-          <td>dfgdg</td>
+          <td>1</td>
           <td>dfgdg</td>
           <td>dfgdg</td>
           <td>dfgdg</td>
