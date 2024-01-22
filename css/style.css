@@ -929,7 +929,7 @@ footer{
 
 .sign-up input[type="submit"]:hover, .contact input[type="submit"]:hover, .update-password-form input[type="submit"]:hover{
     color: black;
-    background-color: gold;
+    background-color: #ffd700;
     /* transition-duration: 0.3s; */
     /* box-shadow: 0.5px 1.5px 5px gray; */
 } 
@@ -1003,8 +1003,8 @@ footer{
     border-radius: 18px;
 }
 
-/* .login-body{
-    background-image: url("images/signup-bg-5.png");
+.login-body{
+    background-image: url("images/login-bg-8.png");
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -1013,7 +1013,7 @@ footer{
     background-size: cover;
     display: grid;
     align-items: center;
-} */
+}
 
 .login-form{
     width: 400px;
@@ -1117,7 +1117,7 @@ input::placeholder{
 
 .login-form input[type="submit"]:hover, .login-form input[type="submit"]:focus{
     color: black;
-    /* box-shadow: 0.5px 1.5px 5px gray; */
+    box-shadow: 0.5px 1.5px 5px gray;
     background-color: gold;
     /* transition-duration: 0.3s; */
 }  
