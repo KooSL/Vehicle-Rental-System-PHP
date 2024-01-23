@@ -19,6 +19,9 @@
   <main class="main">
     <section class="title">
       <p>Categories</p>
+      <div class="add-btn">
+        <a href="add-category.php"><i class="fa-solid fa-plus"></i> Add</a>
+      </div>
     </section>
     <div class="category-table">
       <table>
@@ -41,8 +44,8 @@
             <a href="">Cancel</a>
           </td> -->
           <td>
-            <a href="#" class="confirm"><i class="fa-solid fa-pen"></i></a>
-            <a href="#" class="cancel"><i class="fa-solid fa-trash"></i></a>
+            <a href="edit-category.php" class="edit"><i class="fa-solid fa-pen"></i></a>
+            <a href="#" class="delete"><i class="fa-solid fa-trash"></i></a>
           </td>
         </tr>
         <tr>

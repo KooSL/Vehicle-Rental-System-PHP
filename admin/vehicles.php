@@ -19,14 +19,19 @@
   <main class="main">
     <section class="title">
       <p>Vehicles</p>
-      <a href="add-vehicles.php"><i class="fa-solid fa-plus"></i> Add</a>
+      <div class="category-btn">
+        <a href="categories.php"><i class="fa-solid fa-list"></i> Categories</a>
+      </div>
+      <div class="add-btn">
+        <a href="add-vehicles.php"><i class="fa-solid fa-plus"></i> Add</a>
+      </div>
     </section>
     <div class="vehicle-table">
       <table>
         <tr>
           <th>S.N</th>
           <th>Name</th>
-          <th>Brand</th>
+          <th>Category</th>
           <th>Fuel</th>
           <th>Number</th>
           <th>Cost</th>
@@ -44,8 +49,8 @@
             <a href="">Cancel</a>
           </td> -->
           <td>
-            <a href="#" class="confirm"><i class="fa-solid fa-pen"></i></a>
-            <a href="#" class="cancel"><i class="fa-solid fa-trash"></i></a>
+            <a href="edit-vehicle.php" class="confirm"><i class="fa-solid fa-pen"></i></a>
+            <a href="#" class="delete"><i class="fa-solid fa-trash"></i></a>
           </td>
         </tr>
         <tr>
