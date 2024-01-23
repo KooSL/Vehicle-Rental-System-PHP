@@ -349,12 +349,14 @@ header{
     width: 100%;
     height: 200px;
     border-radius: 0.9rem;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.2s;
+    transition: transform .2s;
 }
 
 .vehicles-container .box .box-img:hover{
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.397);
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.2s;
+    transform: scale(1.05);
 }
 
 .vehicles-container .box .box-img img{
@@ -365,27 +367,32 @@ header{
     object-position: center;
 }
 
-.vehicles-container .box p{
+.vehicles-container .box h3{
     padding: 0 10px;
-    border: 1px solid var(--text-color);
-    width: 58px;
+    /* border: 1px solid black; */
+    /* width: 58px; */
     border-radius: 0.9rem;
     margin: 1rem 0 1rem;
 }
-
+/* 
 .vehicles-container .box h3{
     font-weight: 500;
 
+} */
+
+.vehicles-container .box h2, .vehicles-container .box p{
+    /* font-size: 1.1rem; */
+    /* font-weight: 600; */
+    /* color: green; */
+    /* margin: 0.2rem 0 0.5rem; */
+    padding: 0 10px;
 }
 
-.vehicles-container .box h2{
-    font-size: 1.1rem;
-    font-weight: 600;
+.vehicles-container .box .cost p{
     color: green;
-    margin: 0.2rem 0 0.5rem;
 }
 
-.vehicles-container .box h2 span{
+.vehicles-container .box p span{
     font-size: 0.8rem;
     font-weight: 500;
     color: black;
@@ -406,16 +413,16 @@ header{
     color: #000000;
 }
 
-.about-container{
+.about-container, .detail-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     margin-top: 1rem;
 }
 
-.about-img img{
+.about-img img, .detail-imgs img{
     width: 100%;
 }
 
@@ -441,6 +448,17 @@ header{
     color: black;
     background: var(--main-color);
 }
+
+.detail-text p{
+    display: flex;
+}
+
+/* .detail-text p{
+    text-align: center;
+    align-items: center;
+} */
+
+
 
 .faq-container{
     align-items: center;
@@ -1129,4 +1147,115 @@ input::placeholder{
 
 .login-form p{
     line-height: 50px;
+}
+
+/* -------------------------------- */
+
+.mySlides {
+    display: none
+}
+img {
+    vertical-align: middle;
+}
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+  /* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -22px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+    background-color: blue;
+    /* transition: 0.6s ease; */
+    /* border-radius: 50%; */
+    border-radius: 0.9rem;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    /* border-radius: 3px 0 0 3px; */
+}
+
+.prev:hover,
+.next:hover {
+    background-color: gold;
+    color: black;
+}
+
+/* .text {
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+} */
+
+/* .numbertext {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+} */
+
+.dot {
+    /* position: absolute; */
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: gold;
+    /* border: 1px solid blue; */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+.active,
+.dot:hover {
+    background-color: blue;
+}
+
+/* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+} */
+  /* @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  } */
+  /* @keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  } */
+  /* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px
+    }
 }
