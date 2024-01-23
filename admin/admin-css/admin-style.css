@@ -87,7 +87,7 @@ body{
     padding-right: 25px;
     font-size: 20px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
@@ -101,11 +101,22 @@ body{
     background-color: blue;
     padding: 5px 20px;
     border-radius: 0.9rem;
+    justify-content: space-between;
 }
 
 .title a:hover{
     background-color: gold;
     color: black;
+}
+
+.category-btn{
+    padding-left: 10px;
+}
+
+.add-btn{
+    position: absolute;
+    right: 0;
+    padding-right: 25px;
 }
 
 header{
@@ -231,11 +242,11 @@ td a:hover{
     color: rgb(255, 255, 255);
 }
 
-.confirm{
+.confirm, .edit{
     background-color: green;
 }
 
-.cancel{
+.cancel, .delete{
     background-color: red;
 }
 
@@ -273,8 +284,10 @@ tr:nth-child(odd) {
     border: none;
     border-radius: 0.5rem; 
     cursor: pointer;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 15px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 .add-vehicle button[type="submit"]:hover, .add-vehicle a:hover{
@@ -285,7 +298,7 @@ tr:nth-child(odd) {
 .add-vehicle a{
     text-decoration: none;
     background-color: blue;
-    padding: 7px 20px;
+    padding: 10px 20px;
     color: white;
     border: none;
     border-radius: 0.5rem; 
