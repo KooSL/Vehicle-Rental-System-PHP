@@ -58,7 +58,7 @@
         <div class="vehicles-container">
             <div class="box">
                 <div class="box-img">
-                    <img src="images\about.png" alt="">
+                    <img src="images/about.png">  
                 </div>
                 <h3>2017 Honda Civic</h3>
                 <p>2017 Honda Civic</p>

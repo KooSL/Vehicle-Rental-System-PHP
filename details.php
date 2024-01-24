@@ -18,7 +18,10 @@
     <!--Details-->
     <section class="detail" id="detail">
         <div class="heading">
-            <span>Details</span>
+            <div class="heading-2">
+                <a href="vehicles.php"><i class="fa-solid fa-angle-left"></i> Back</a>
+                <span>Details</span>
+            </div>
             <h1>2017 Honda Civic</h1>
         </div>  
         <div class="detail-container">
@@ -81,21 +84,69 @@
             </script>
 
             <div class="detail-text">
-                <p>2017 Honda Civic</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur totam, aperiam, quibusdam dicta iusto, consectetur beatae officiis molestias magnam eos. Quibusdam minima dicta possimus, tempore molestias sequi animi voluptate corporis consectetur, amet, veritatis aliquid praesentium laboriosam harum. Qui, numquam.</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <p>2017 Honda Civic</p>
-                <a href="#" class="btn">Rent Now</a>
+                <p><b>Name:</b>&nbsp;2017 Honda Civic</p>
+                <div class="description">
+                    <p><b>Description:</b><br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur totam, aperiam, quibusdam dicta iusto, consectetur beatae officiis molestias magnam eos. Quibusdam minima dicta possimus, tempore molestias sequi animi voluptate corporis consectetur, amet, veritatis aliquid praesentium laboriosam harum. Qui, numquam.</p>
+                </div>
+                <p><b>Brand:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Fuel:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Seats:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Number:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Cost:</b>&nbsp;2017 Honda Civic</p>
+                <!-- <div class="rent-now-btn">
+                    <a href="#">Rent Now</a>
+                </div> -->
+                <div class="rent-now-btn">
+                    <button id="rent-now-btn">Rent Now</button>
+                    <!-- <button id="rent-now-btn">Not Now</button> -->
+                </div>
             </div>
         </div> 
+
+        <div class="more-vehicles">
+            <hr>
+            <p>More Vehicles:</p>
+            <div class="more-vehicle-container">
+                <div class="vehicles-container">
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="images/about.png">  
+                        </div>
+                        <h3>2017 Honda Civic</h3>
+                        <p>2017 Honda Civic</p>
+                        <div class="cost">
+                            <p>$400 <span>/month</span><p>
+                        </div>
+                        <a href="details.php" class="btn">Details</a>
+                        <!-- <a href="#" class="btn">Rent Now</a> -->
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="images/about.png">  
+                        </div>
+                        <h3>2017 Honda Civic</h3>
+                        <p>2017 Honda Civic</p>
+                        <div class="cost">
+                            <p>$400 <span>/month</span><p>
+                        </div>
+                        <a href="details.php" class="btn">Details</a>
+                        <!-- <a href="#" class="btn">Rent Now</a> -->
+                    </div>
+                    <div class="box">
+                        <div class="box-img">
+                            <img src="images/about.png">  
+                        </div>
+                        <h3>2017 Honda Civic</h3>
+                        <p>2017 Honda Civic</p>
+                        <div class="cost">
+                            <p>$400 <span>/month</span><p>
+                        </div>
+                        <a href="details.php" class="btn">Details</a>
+                        <!-- <a href="#" class="btn">Rent Now</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <?php
