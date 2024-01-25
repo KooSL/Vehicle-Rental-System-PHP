@@ -42,7 +42,7 @@
           </td> -->
           <td>
             <a href="#" class="confirm"><i class="fa-solid fa-check"></i></a>
-            <a href="#" class="cancel"><i class="fa-solid fa-xmark"></i></a>
+            <a href="#" class="cancel" onclick="return confirm('Are you sure to cancel this booking?')"><i class="fa-solid fa-xmark"></i></a>
           </td>
         </tr>
         <tr>

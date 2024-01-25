@@ -50,7 +50,7 @@
             <label for="cars">Vehicle Description:</label><br>
                 <textarea name="description" placeholder="Description" required></textarea><br>
             <button type="submit"><i class="fa-solid fa-check"></i> Save</button>
-            <a href="vehicles.php" class="exit-btn"><i class="fa-solid fa-xmark"></i> Cancel</a>
+            <a href="vehicles.php" class="exit-btn" onclick="return confirm('Are you sure to cancel?')"><i class="fa-solid fa-xmark"></i> Cancel</a>
         </form>
     </div>
   </main>
