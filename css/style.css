@@ -65,12 +65,14 @@ header{
 
 .navbar a{
     font-size: 1rem;
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
     color: var(--text-color);
     font-weight: 500;
+    padding: 10px 10px;
+    border-radius: 0.9rem;
 }
 
-.navbar a::after{
+/* .navbar a::after{
     content: "";
     width: 0;
     height: 2px;
@@ -81,8 +83,13 @@ header{
     background-color: gold;
 }
 
-.navbar a:hover::after{
+.active, .navbar a:hover::after{
     width: 100%;
+} */
+
+.active, .navbar a:hover{
+    background-color: gold;
+    color: #000000;
 }
 
 #menu-icon{
@@ -400,6 +407,10 @@ header{
 
 } */
 
+.more-vehicle-container > .vehicles-container > .box > h3, .more-vehicle-container > .vehicles-container > .box > p, .more-vehicle-container > .vehicles-container > .box > .cost{
+    margin-bottom: -25px;
+}
+
 .vehicles-container .box h2, .vehicles-container .box p{
     /* font-size: 1.1rem; */
     /* font-weight: 600; */
@@ -433,7 +444,7 @@ header{
     color: #000000;
 }
 
-.about-container, .detail-container{
+.about-container, .detail-container, .rent-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     /* margin-top: 2rem; */
@@ -880,7 +891,7 @@ footer{
     /* background-color: white; */
 }
 
-.sign-up .s-inputs input, .contact .c-inputs input, .c-inputs textarea, .update-password-form .p-inputs input{
+.sign-up .s-inputs input, .contact .c-inputs input, .c-inputs textarea, .update-password-form .p-inputs input, .s-inputs select{
     text-align: center;
     padding: 10px;
     margin: 10px auto;
@@ -894,7 +905,14 @@ footer{
     border-radius: 18px;
 }
 
-.s-inputs input:hover, .c-inputs input:hover, .c-inputs textarea:hover, .p-inputs input:hover{
+/* .s-inputs select{
+    color: rgba(0, 0, 0, 0.671);
+} */
+.s-inputs select > option{
+    text-align: center;
+}
+
+.s-inputs input:hover, .c-inputs input:hover, .c-inputs textarea:hover, .p-inputs input:hover, .s-inputs select:hover{
     box-shadow: 2px 3px 13px gray;
     transition: all ease-in-out 0.3s;
     border-radius: 18px;
@@ -1274,12 +1292,15 @@ img {
     text-justify: inter-word;
 }
 
-.rent-now-btn{
+.payorcancel{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 1rem;
+    margin-top: 10px;
+    align-items: center;
 }
 
-.rent-now-btn > button{
+.rent-now-btn > button, .pay-now-btn > button, .cancel-btn > button{
     background-color: blue;
     border: none;
     padding: 10px;
@@ -1288,9 +1309,10 @@ img {
     border-radius: 0.9rem;
     cursor: pointer;
     margin-top: 10px;
+    align-items: center;
 }
 
-.rent-now-btn > button:hover{
+.rent-now-btn > button:hover, .pay-now-btn > button:hover, .cancel-btn > button:hover{
     background-color: gold;
     color: rgb(0, 0, 0);
 }
@@ -1306,4 +1328,57 @@ img {
 .heading > .heading-2 a:hover{
     background-color: gold;
     color: black;
+}
+
+.renting-detail{
+    /* background-color: #eeeff1; */
+    width: fit-content;
+    padding: 20px;
+    border-radius: 0.9rem;
+    transition: all ease-in-out 0.3s;
+}
+
+.renting-detail:hover{
+    box-shadow: 0.5px 5px 20px grey;
+    transition: all ease-in-out 0.3s;
+}
+
+.renting-detail input, .renting-detail textarea{
+    margin: 10px 0;
+    transition: all ease-in-out 0.3s;
+    outline: none;
+    border-radius: 0.9rem;
+    border: none;
+    box-shadow: 2px 3px 5px gray;
+    padding: 10px;
+    text-align: center;
+}
+
+.renting-detail input:hover, .renting-detail textarea:hover{
+    box-shadow: 2px 3px 13px gray;
+    transition: all ease-in-out 0.3s;
+}
+
+.renting-detail textarea::placeholder{
+    text-align: center;
+}
+
+.renting-detail p{
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+}
+
+.v-details{
+    display: flex;
+    margin-top: -150px;
+    /* background-color: #eeeff1; */
+    /* justify-content: space-between; */
+    gap: 3rem;
+}
+
+.v-details p{
+    background-color: #eeeff1;
+    padding: 10px;
+    border-radius: 0.9rem;
 }
