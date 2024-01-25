@@ -66,7 +66,7 @@
                     <p>$400 <span>/month</span><p>
                 </div>
                 <a href="details.php" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="rent-now.php" class="btn">Rent Now</a>
             </div>
 
             <div class="box">

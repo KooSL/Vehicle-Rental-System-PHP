@@ -80,7 +80,7 @@
                     }
                     slides[slideIndex - 1].style.display = "block";
                     dots[slideIndex - 1].className += " active";
-                }
+                }   
             </script>
 
             <div class="detail-text">
@@ -97,8 +97,7 @@
                     <a href="#">Rent Now</a>
                 </div> -->
                 <div class="rent-now-btn">
-                    <button id="rent-now-btn">Rent Now</button>
-                    <!-- <button id="rent-now-btn">Not Now</button> -->
+                    <button onclick="location.href = 'rent-now.php';" id="rentnowbtn">Rent Now</button>
                 </div>
             </div>
         </div> 

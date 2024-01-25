@@ -23,23 +23,23 @@
         <div class="sign-up-form">
             <p class="signup-txt"><i class="fa-solid fa-user-plus"></i> Sign Up<p>
             <div class="s-inputs">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="text" name="address" placeholder="Address" required>
-            <input type="text" name="email" placeholder="Email" required>
-            <input type="text" name="number" placeholder="Phone Number" required>
-            </div>
-            <!-- <label for="gender">Gender</label>
-            <select name="gender" id="gender">
+            <input type="text" name="u_name" placeholder="Full Name" required>
+            <input type="text" name="u_address" placeholder="Address" required>
+            <input type="text" name="u_email" placeholder="Email" required>
+            <input type="text" name="u_phone" placeholder="Phone Number" required maxlength="15">
+            <select name="u_gender" id="gender" required>
+                <option value="gender">Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
-            </select> -->
+            </select>
+            </div>
             <div class="sign-up-password-box">
-                <input type="password" name="password" placeholder="New Password" id="signuppassword" required>
+                <input type="password" name="u_password" placeholder="New Password" id="signuppassword" required>
                 <i class="fa-solid fa-eye-slash" id="eyeicon" aria-hidden="true" onclicK="toggle()"></i>
             </div>
             <div class="sign-up-c-password-box">
-                <input type="password" name="password" placeholder="Confirm Password" id="csignuppassword" required>
+                <input type="password" name="u_cpassword" placeholder="Confirm Password" id="csignuppassword" required>
                 <i class="fa-solid fa-eye-slash" id="ceyeicon" aria-hidden="true" onclicK="ctoggle()"></i>
             </div>
             
@@ -56,5 +56,38 @@
     <?php
         include 'container\footer.php';
     ?>
+
+<?php
+if(isset($_POST['submit']))
+{
+    $u_name = $_POST['u_name'];
+    $u_address = $_POST['u_address'];
+    $u_email = $_POST['u_email'];
+    $u_phone = $_POST['u_phone'];
+    $u_gender = $_POST['u_gender'];
+    $u_password = $_POST['u_password'];
+    $u_cpassword = $_POST['u_cpassword'];
+
+    if($u_password == $u_cpassword)
+    {
+        $qry = "INSERT INTO user_signup (u_name, u_address, u_email, u_phone, u_gender, u_password) VALUES ('$u_name', '$u_address', '$u_email', '$u_phone', '$u_gender', md5('$u_password'))";
+        include 'container/db_connection.php';
+        if(mysqli_query($con, $qry))
+        {
+            echo '<script type="text/javascript"> alert("Sign Up Successfully!"); window.href.location = "../login.php"; </script>';
+        }
+        else
+        {
+            echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
+        }
+    }
+    else
+    {
+        echo '<script type="text/javascript"> alert("Password Doesnt Match!"); window.href.location = "sign-up.php"; </script>';
+    }
+}
+
+?>
 </body>
 </html>
+

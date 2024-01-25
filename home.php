@@ -30,7 +30,7 @@
                 <li><a href="#bikes"><i class="fa-solid fa-motorcycle"></i> Bikes</a></li>
                 <li><a href="#cycles"><i class="fa-solid fa-bicycle"></i> Cycles</a></li>
                 <li><a href="#trucks"><i class="fa-solid fa-truck"></i> Trucks</a></li>
-                <li><a href="#more"><i class="fa-solid fa-bars"></i> More</a></li>
+                <li><a href="vehicles.php"><i class="fa-solid fa-bars"></i> More</a></li>
             </ul>
         </div>
 
