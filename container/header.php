@@ -3,8 +3,8 @@
         <a href="home.php" class="logo"><i class="fa-solid fa-car"></i> Sadhan <i class="fa-solid fa-motorcycle"></i></a>
 
        <div class="bx bx-menu" id="menu-icon"></div>
-        <ul class="navbar">
-            <li><a href="home.php">Home</a></li>
+        <ul class="navbar" id="myDIV">
+            <li><a href="home.php" class="btn active">Home</a></li>
             <li><a href="vehicles.php">Vehicles</a></li>
             <!-- <li><a href="services.php">services</a></li> -->
             <li><a href="reviews.php">Reviews</a></li>
@@ -17,5 +17,17 @@
             <a href="sign-up.php" class="sign-in"><i class="fa-solid fa-user"></i> Sign Up</a>
         </div>
     </header>
+
+    <!-- <script>
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+        }
+    </script> -->
 </body>
 </html>
