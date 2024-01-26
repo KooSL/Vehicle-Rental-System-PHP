@@ -56,160 +56,28 @@
         </div> 
 
         <div class="vehicles-container">
-            <div class="box">
-                <div class="box-img">
-                    <img src="images/about.png">  
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="details.php" class="btn">Details</a>
-                <a href="rent-now.php" class="btn">Rent Now</a>
-            </div>
 
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\IMG_2007.jpg" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
+<?php
+    $qry = "SELECT * FROM vehicles ORDER BY v_id DESC";
+    include 'container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+?>
 
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\pngwing.com.png" alt="">
+            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                <div class="box">
+                    <div class="box-img">
+                        <img src="images/<?php echo $row['v_image1'];?>">  
+                    </div>
+                    <h3><?php echo $row['v_name'];?></h3>
+                    <p><?php echo $row['v_type'];?></p>
+                    <div class="cost">
+                        <p>Rs.<?php echo $row['v_cost'];?> <span>/month</span><p>
+                    </div>
+                    <a href="details.php" class="btn">Details</a>
+                    <a href="rent-now.php" class="btn">Rent Now</a>
                 </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
+            <?php } ?>
 
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\jeep.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-
-            <div class="box">
-                <div class="box-img">
-                    <img src="images\about.png" alt="">
-                </div>
-                <h3>2017 Honda Civic</h3>
-                <p>2017 Honda Civic</p>
-                <div class="cost">
-                    <p>$400 <span>/month</span><p>
-                </div>
-                <a href="#" class="btn">Details</a>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
         </div>
     </section>
 

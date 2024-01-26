@@ -53,9 +53,6 @@
     </form>
 </div>
 
-    <?php
-        include 'container\footer.php';
-    ?>
 
 <?php
 if(isset($_POST['submit']))
@@ -74,20 +71,30 @@ if(isset($_POST['submit']))
         include 'container/db_connection.php';
         if(mysqli_query($con, $qry))
         {
-            echo '<script type="text/javascript"> alert("Sign Up Successfully!"); window.href.location = "../login.php"; </script>';
+            
+            echo '<script type="text/javascript"> alert("Sign Up Successfully!\nNow Log in With Your Email and Password"); window.location.assign("login.php"); </script>';
+            exit();
         }
         else
         {
-            echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
+            echo '<script type="text/javascript"> alert("Something Went Wrong!\nMay Be Email or Phone Already Used") </script>';
         }
     }
     else
     {
-        echo '<script type="text/javascript"> alert("Password Doesnt Match!"); window.href.location = "sign-up.php"; </script>';
+        echo '<script type="text/javascript"> alert("Password Doesnt Match!"); window.location.assign("signup.php"); </script>';
     }
 }
 
 ?>
+
+    <?php
+        include 'container\footer.php';
+    ?>
 </body>
 </html>
 
+
+
+
+`

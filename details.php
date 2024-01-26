@@ -15,6 +15,13 @@
         include 'container\header.php';
     ?>
 
+<?php
+    $qry = "SELECT * FROM vehicles ORDER BY v_id DESC";
+    include 'container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+    $row = mysqli_fetch_assoc($result);
+?>  
+
     <!--Details-->
     <section class="detail" id="detail">
         <div class="heading">
@@ -22,26 +29,20 @@
                 <a href="vehicles.php"><i class="fa-solid fa-angle-left"></i> Back</a>
                 <span>Details</span>
             </div>
-            <h1>2017 Honda Civic</h1>
+            <h1><?php echo $row['v_name'];?></h1>
         </div>  
         <div class="detail-container">
             <div class="detail-imgs">
                 <div class="slideshow-container">
+
+                    <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="images\about.png" style="width:100%">
+                        <img src="images/<?php echo $row['v_image1'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
-                    <div class="mySlides fade">
-                        <!-- <div class="numbertext">2 / 3</div> -->
-                        <img src="images\image-2.jpg" style="width:100%">
-                        <!-- <div class="text">Sunset in Romania</div> -->
-                    </div>
-                    <div class="mySlides fade">
-                        <!-- <div class="numbertext">3 / 3</div> -->
-                        <img src="images\image-3.jpg" style="width:100%">
-                        <!-- <div class="text">New York, USA</div> -->
-                    </div>
+                    <?php } ?>
+    
                     <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-caret-left"></i></a>
                     <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-caret-right"></i></a>
                 </div>
@@ -84,15 +85,15 @@
             </script>
 
             <div class="detail-text">
-                <p><b>Name:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Name:</b>&nbsp;<?php echo $row['v_name'];?></p>
                 <div class="description">
-                    <p><b>Description:</b><br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur totam, aperiam, quibusdam dicta iusto, consectetur beatae officiis molestias magnam eos. Quibusdam minima dicta possimus, tempore molestias sequi animi voluptate corporis consectetur, amet, veritatis aliquid praesentium laboriosam harum. Qui, numquam.</p>
+                    <p><b>Description:</b><br /><?php echo $row['v_description'];?></p>
                 </div>
-                <p><b>Brand:</b>&nbsp;2017 Honda Civic</p>
-                <p><b>Fuel:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Brand:</b>&nbsp;<?php echo $row['v_name'];?></p>
+                <p><b>Fuel:</b>&nbsp;<?php echo $row['v_fuel'];?></p>
                 <p><b>Seats:</b>&nbsp;2017 Honda Civic</p>
-                <p><b>Number:</b>&nbsp;2017 Honda Civic</p>
-                <p><b>Cost:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Number:</b>&nbsp;<?php echo $row['v_number'];?></p>
+                <p><b>Cost:</b>&nbsp;Rs.<?php echo $row['v_cost'];?></p>
                 <!-- <div class="rent-now-btn">
                     <a href="#">Rent Now</a>
                 </div> -->
@@ -107,42 +108,22 @@
             <p>More Vehicles:</p>
             <div class="more-vehicle-container">
                 <div class="vehicles-container">
+
+                <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="box">
                         <div class="box-img">
-                            <img src="images/about.png">  
+                            <img src="images/<?php echo $row['v_image1'];?>">  
                         </div>
-                        <h3>2017 Honda Civic</h3>
-                        <p>2017 Honda Civic</p>
+                        <h3><?php echo $row['v_name'];?></h3>
+                        <p><?php echo $row['v_type'];?></p>
                         <div class="cost">
-                            <p>$400 <span>/month</span><p>
+                            <p>Rs.<?php echo $row['v_cost'];?> <span>/month</span><p>
                         </div>
                         <a href="details.php" class="btn">Details</a>
                         <!-- <a href="#" class="btn">Rent Now</a> -->
                     </div>
-                    <div class="box">
-                        <div class="box-img">
-                            <img src="images/about.png">  
-                        </div>
-                        <h3>2017 Honda Civic</h3>
-                        <p>2017 Honda Civic</p>
-                        <div class="cost">
-                            <p>$400 <span>/month</span><p>
-                        </div>
-                        <a href="details.php" class="btn">Details</a>
-                        <!-- <a href="#" class="btn">Rent Now</a> -->
-                    </div>
-                    <div class="box">
-                        <div class="box-img">
-                            <img src="images/about.png">  
-                        </div>
-                        <h3>2017 Honda Civic</h3>
-                        <p>2017 Honda Civic</p>
-                        <div class="cost">
-                            <p>$400 <span>/month</span><p>
-                        </div>
-                        <a href="details.php" class="btn">Details</a>
-                        <!-- <a href="#" class="btn">Rent Now</a> -->
-                    </div>
+                <?php } ?>  
+
                 </div>
             </div>
         </div>

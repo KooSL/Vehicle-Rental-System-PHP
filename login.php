@@ -17,13 +17,13 @@
     ?>
 
     <div class="login-body">
-        <form action="" class="login-form" method="POST">
+        <form action="login.php" class="login-form" method="POST">
             <p class="login-txt"><i class="fa-solid fa-right-to-bracket"></i> Log In</p>
             <div class="l-inputs">
-            <input type="text" name="email" placeholder="Username" required>
+            <input type="text" name="u_email" placeholder="Username" required>
             </div>
             <div class="login-password-box">
-                <input type="password" name="password" placeholder="Password" id="loginpassword" required>
+                <input type="password" name="u_password" placeholder="Password" id="loginpassword" required>
                 <i class="fa-solid fa-eye-slash" id="logineyeicon" aria-hidden="true" onclicK="logintoggle()"></i>
             </div>
             <p><a href="update-password.php" class="e-option">Forget Password?</a></p>
@@ -32,9 +32,31 @@
         </form>
     </div>
 
-        <?php
-            include 'container\footer.php';
-        ?>
+
+<?php
+if(isset($_POST['submit']))
+{
+    $u_email = $_POST['u_email'];
+    $u_password = $_POST['u_password'];
+    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_email' AND u_password = md5('$u_password')";
+    include 'container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+    if(mysqli_num_rows($result) == 1)
+    {
+        // $_SESSION['loggedin'] = "Yes";
+        // header('location: home.php');
+        echo '<script type="text/javascript"> alert("Log in Successfully!"); window.location.assign("home.php"); </script>';
+    }
+    else
+    {
+        echo '<script type="text/javascript"> alert("Invalid Credentials!");</script>';
+    }
+}
+?>
+
+    <?php
+        include 'container\footer.php';
+    ?>
 
 </body>
 </html>
