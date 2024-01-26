@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,32 +30,29 @@
           <th>Address</th>
           <th>Email</th>
           <th>Phone</th>
+          <th>Gender</th>
           <th>Reg. Date</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Kushal Acharya</td>
-          <td>Toyota</td>
-          <td>2024-01-22</td>
-          <td>Confirmed</td>
-          <td>Confirm/Cancel</td>
-        </tr>
-        <tr>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-        </tr>
-        <tr>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-        </tr>
+<?php
+    $qry = "SELECT * FROM user_signup ORDER BY u_id DESC";
+    include 'admin-container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+?>
+
+        <?php while($row = mysqli_fetch_assoc($result)) { ?>
+          <tr>
+            <td><?php echo $row['u_id'];?></td>
+            <td><?php echo $row['u_name'];?></td>
+            <td><?php echo $row['u_address'];?></td>
+            <td><?php echo $row['u_email'];?></td>
+            <td><?php echo $row['u_phone'];?></td>
+            <td><?php echo $row['u_gender'];?></td>
+            <td><?php echo $row['u_reg_date'];?></td>
+          </tr>
+        <?php } ?>
+
+
+
       </table>
     </div>
     

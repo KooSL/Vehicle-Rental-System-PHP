@@ -35,42 +35,33 @@
           <th>Fuel</th>
           <th>Number</th>
           <th>Cost</th>
+          <th>Description</th>
+          <th>Images</th>
           <th>Action</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Kushal Acharya</td>
-          <td>Toyota</td>
-          <td>2024-01-22</td>
-          <td>Confirmed</td>
-          <td>Confirm/Cancel</td>
-          <!-- <td>
-            <a href="">Confirm</a>
-            <a href="">Cancel</a>
-          </td> -->
-          <td>
-            <a href="edit-vehicle.php" class="confirm"><i class="fa-solid fa-pen"></i></a>
-            <a href="#" class="delete"><i class="fa-solid fa-trash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-        </tr>
-        <tr>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-        </tr>
+
+<?php
+    $qry = "SELECT * FROM vehicles ORDER BY v_id DESC";
+    include 'admin-container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+?>        
+
+        <?php while($row = mysqli_fetch_assoc($result)) { ?>
+          <tr>
+            <td><?php echo $row['v_id'];?></td>
+            <td><?php echo $row['v_name'];?></td>
+            <td><?php echo $row['v_type'];?></td>
+            <td><?php echo $row['v_fuel'];?></td>
+            <td><?php echo $row['v_number'];?></td>
+            <td><?php echo $row['v_cost'];?></td>
+            <td><?php echo $row['v_description'];?></td>
+            <td><img src="../images/<?php echo $row['v_image1'];?>" alt="" style="width:100px"></td>
+            <td>
+              <a href="edit-vehicle.php" class="confirm"><i class="fa-solid fa-pen"></i></a>
+              <a href="#" class="delete" onclick="return confirm('Are you sure to delete?')"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+        <?php } ?>
       </table>
     </div>
     
