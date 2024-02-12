@@ -15,7 +15,13 @@
   <?php
     include "admin-container\admin-leftbar.php";
   ?>
-  
+
+<?php
+    $qry = "SELECT * FROM categories";
+    include 'admin-container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+  ?>   
+
   <main class="main">
     <section class="title">
       <p>Add Vehicle</p>
@@ -27,10 +33,9 @@
                 <input type="text" name="v_name" placeholder="Name" required><br>
             <label for="type">Choose the category:</label>
                 <select name="v_type" id="type" required>
-                    <option value="Select">Select</option>
-                    <option value="Car">Car</option>
-                    <option value="Bike">Bike</option>
-                    <option value="Cycle">Cycle</option>
+                <?php while($row = mysqli_fetch_assoc($result)){  ?>
+                    <option><?php echo $row['c_name'];?></option>
+                <?php } ?>
                 </select><br>
             <label for="fuel">Choose the fuel:</label>
                 <select name="v_fuel" id="fuel">
@@ -42,17 +47,25 @@
                     <option value="cng">CNG</option>
                     <option value="hybrid">Hybrid</option>
                 </select><br>
+            <label for="cars">Vehicle Seat:</label>
+                <input type="number" name="v_seat" placeholder="Seat Number"><br>
             <label for="cars">Vehicle Number:</label>
                 <input type="text" name="v_number" placeholder="Number"><br>
             <label for="cars">Vehicle Cost:</label>
-                <input type="text" name="v_cost" placeholder="Cost (Rs.)" required><br>
+                <input type="text" name="v_cost" placeholder="Cost (Rs.)" required><br> 
             <label for="cars">Vehicle Image:</label><br>
-                <input type="file" name="v_image1" class="image-1" required><br>
-                <input type="file" name="v_image2" class="image-2" ><br>
-                <input type="file" name="v_image3" class="image-3" ><br>
+                <input type="file" name="v_image1" class="image-1" required accept="image/png, image/jpeg, image/jpg"><br>
+                <input type="file" name="v_image2" class="image-2" accept="image/png, image/jpeg, image/jpg"><br>
+                <input type="file" name="v_image3" class="image-3" accept="image/png, image/jpeg, image/jpg"><br>
             <label for="cars">Vehicle Description:</label><br>
                 <textarea name="v_description" placeholder="Description" required></textarea><br>
-            <button type="submit" name="submit"><i class="fa-solid fa-check"></i> Save</button>
+            <label for="status">Vehicle Status:</label>
+                <select name="v_status" id="status" required>
+                        <option value="Select">Select</option>
+                        <option value="Available">Available</option>
+                        <option value="Unavailable">Unavailable</option>
+                    </select><br>
+            <button type="submit" name="submit"><i class="fa-solid fa-check"></i> Upload</button>
             <a href="vehicles.php" class="exit-btn" onclick="return confirm('Are you sure to cancel?')"><i class="fa-solid fa-xmark"></i> Cancel</a>
         </form>
     </div>  
@@ -64,14 +77,16 @@ if(isset($_POST['submit']))
     $v_name = $_POST['v_name'];
     $v_type = $_POST['v_type'];
     $v_fuel = $_POST['v_fuel'];
+    $v_seat = $_POST['v_seat'];
     $v_number = $_POST['v_number'];
     $v_cost = $_POST['v_cost'];
     $v_image1 = $_POST['v_image1'];
     $v_image2 = $_POST['v_image2'];
     $v_image3 = $_POST['v_image3'];
     $v_description = $_POST['v_description'];
+    $v_status = $_POST['v_status'];
 
-    $qry = "INSERT INTO vehicles (v_name, v_type, v_fuel, v_number, v_cost, v_image1, v_image2, v_image3, v_description) VALUES ('$v_name', '$v_type', '$v_fuel', '$v_number', '$v_cost', '$v_image1', '$v_image2', '$v_image3', '$v_description')";
+    $qry = "INSERT INTO vehicles (v_name, v_type, v_fuel, v_seat, v_number, v_cost, v_image1, v_image2, v_image3, v_description, v_status) VALUES ('$v_name', '$v_type', '$v_fuel', '$v_seat', '$v_number', '$v_cost', '$v_image1', '$v_image2', '$v_image3', '$v_description', '$v_status')";
     include 'admin-container/db_connection.php';
     if(mysqli_query($con, $qry))
     {
@@ -91,6 +106,6 @@ if(isset($_POST['submit']))
 
 
 
-
 </body>
 </html>
+

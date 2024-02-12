@@ -25,45 +25,40 @@
     </section>
     <div class="category-table">
       <table>
+
         <tr>
           <th>S.N</th>
-          <th>Name</th>
+          <th>Category</th>
           <th>Type</th>
-          <th>Fuel</th>
-          <th>Seats</th>
           <th>Action</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>TATA</td>
-          <td>Car</td>
-          <td>Diesel</td>
-          <td>5</td>
-          <!-- <td>
-            <a href="">Confirm</a>
-            <a href="">Cancel</a>
-          </td> -->
-          <td>
-            <a href="edit-category.php" class="edit"><i class="fa-solid fa-pen"></i></a>
-            <a href="#" class="delete"><i class="fa-solid fa-trash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-          <td>dfgdg</td>
-        </tr>
+
+<?php
+    $qry = "SELECT * FROM categories ORDER BY c_id DESC";
+    include 'admin-container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+?>
+
+        <?php while($row = mysqli_fetch_assoc($result)){  ?>
+          <tr>
+            <td><?php echo $row['c_id'];?></td>
+            <td><?php echo $row['c_name'];?></td>
+            <td><?php echo $row['c_type'];?></td>
+            <td>
+              <a href="edit-category.php?c_id=<?php echo $row['c_id'];?>" class="edit"><i class="fa-solid fa-pen"></i></a>
+              <a href="categories.php?c_id=<?php echo $row['c_id'];?>" class="delete" onclick="return confirm('Are you sure to delete?')"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+        <?php } ?>
+        <?php
+            if (isset($_GET['c_id'])) {
+              $id = $_GET['c_id'];
+              $qry2 = "DELETE FROM categories WHERE c_id = '$id'";
+              $result = mysqli_query($con, $qry2);
+          }
+            
+        ?>
+
       </table>
     </div>
     

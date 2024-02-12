@@ -23,36 +23,36 @@
     </section>
     <div class="add-vehicle">
         <form action="" method="POST">
-            <label for="cars">Vehicle Name: </label>
-                <input type="text" name="v-name" placeholder="Name" required><br>
-            <label for="brands">Choose the brand:</label>
-                <select name="brands" id="brands" required>
-                    <option value="Select">Select</option>
-                    <option value="tata">TATA</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="suzuki">Suzuki</option>
-                </select><br>
-            <label for="fuel">Choose the fuel:</label>
-                <select name="fuel" id="fuel" required>
-                    <option value="Select">Select</option>
-                    <option value="petrol">Petrol</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="ev">EV</option>
-                </select><br>
-            <label for="cars">Vehicle Number:</label>
-                <input type="text" name="number" placeholder="Number" required><br>
-            <label for="cars">Vehicle Cost:</label>
-                <input type="text" name="cost" placeholder="Cost (Rs.)" required><br>
-            <label for="cars">Vehicle Image:</label><br>
-                <input type="file" name="photopath1" class="image-1" required><br>
-                <input type="file" name="photopath2" class="image-2" required><br>
-                <input type="file" name="photopath3" class="image-3" required><br>
-            <label for="cars">Vehicle Description:</label><br>
-                <textarea name="description" placeholder="Description" required></textarea><br>
-            <button type="submit"><i class="fa-solid fa-check"></i> Save</button>
+            <label for="cars">Vehicle Category: </label>
+                <input type="text" name="c_name" placeholder="Category" required><br>
+            <label for="cars">Vehicle Type: </label>
+                <input type="text" name="c_type" placeholder="Type" required><br>
+            <button type="submit" name="submit"><i class="fa-solid fa-check"></i> Upload</button>
             <a href="categories.php" class="exit-btn"><i class="fa-solid fa-xmark"></i> Cancel</a>
         </form>
     </div>
+
+<?php
+if(isset($_POST['submit']))
+{
+    $c_name = $_POST['c_name'];
+    $c_type = $_POST['c_type'];
+
+    $qry = "INSERT INTO categories (c_name, c_type) VALUES ('$c_name', '$c_type')";
+    include 'admin-container/db_connection.php';
+    if(mysqli_query($con, $qry))
+    {
+                
+        echo '<script type="text/javascript"> alert("Category Added Successfully!"); window.location.assign("categories.php"); </script>';
+        exit();
+    }
+    else
+    {
+        echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
+    }
+}
+?>
+
   </main>
 </body>
 </html>

@@ -15,6 +15,14 @@
   <?php
     include "admin-container\admin-leftbar.php";
   ?>
+
+<?php
+    $id = $_GET['c_id'];
+    $qry = "SELECT * FROM categories WHERE c_id = $id";
+    include 'admin-container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+    $row = mysqli_fetch_assoc($result);
+?>
   
   <main class="main">
     <section class="title">
@@ -23,36 +31,36 @@
     </section>
     <div class="add-vehicle">
         <form action="" method="POST">
-            <label for="cars">Vehicle Name: </label>
-                <input type="text" name="v-name" placeholder="Name" required><br>
-            <label for="brands">Choose the brand:</label>
-                <select name="brands" id="brands" required>
-                    <option value="Select">Select</option>
-                    <option value="tata">TATA</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="suzuki">Suzuki</option>
-                </select><br>
-            <label for="fuel">Choose the fuel:</label>
-                <select name="fuel" id="fuel" required>
-                    <option value="Select">Select</option>
-                    <option value="petrol">Petrol</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="ev">EV</option>
-                </select><br>
-            <label for="cars">Vehicle Number:</label>
-                <input type="text" name="number" placeholder="Number" required><br>
-            <label for="cars">Vehicle Cost:</label>
-                <input type="text" name="cost" placeholder="Cost (Rs.)" required><br>
-            <label for="cars">Vehicle Image:</label><br>
-                <input type="file" name="photopath1" class="image-1" required><br>
-                <input type="file" name="photopath2" class="image-2" required><br>
-                <input type="file" name="photopath3" class="image-3" required><br>
-            <label for="cars">Vehicle Description:</label><br>
-                <textarea name="description" placeholder="Description" required></textarea><br>
-            <button type="submit"><i class="fa-solid fa-check"></i> Save</button>
-            <a href="categories.php" class="exit-btn"><i class="fa-solid fa-xmark"></i> Cancel</a>
+          <label for="cars">Vehicle Category: </label>
+                  <input type="text" name="c_name" placeholder="Category" required value="<?php echo $row['c_name'];?>"><br>
+          <label for="cars">Vehicle Type: </label>
+                  <input type="text" name="c_type" placeholder="Type" required value="<?php echo $row['c_type'];?>"><br>
+          <button type="submit" name="submit"><i class="fa-solid fa-check"></i> Save</button>
+          <a href="categories.php" class="exit-btn"><i class="fa-solid fa-xmark"></i> Cancel</a>
         </form>
     </div>
+    
+<?php
+if(isset($_POST['submit'])) {
+  $c_name = $_POST['c_name'];
+  $c_type = $_POST['c_type'];
+
+    // Update query
+    $qry2 = "UPDATE categories SET
+              c_name = '$c_name',
+              c_type = '$c_type'
+              WHERE c_id = '$id'";
+
+    if(mysqli_query($con, $qry2)) {
+        echo '<script type="text/javascript"> alert("Category Updated Successfully!"); window.location.assign("categories.php"); </script>';
+        exit();
+    } else {
+        echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
+    }
+}
+?>
+
+
   </main>
 </body>
 </html>
