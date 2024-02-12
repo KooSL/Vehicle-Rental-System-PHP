@@ -31,38 +31,28 @@
             <p><a href="sign-up.php" class="e-option">Create new account</a></p>
         </form>
     </div>
-
+    
 <?php
+include 'container/db_connection.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $u_username = $_POST['u_email'];
     $u_password = $_POST['u_password'];
-
-    include 'admin-container/db_connection.php';
+    $hashed_password = md5($u_password);
     
-    // Retrieve the hashed password from the database
-    $qry = "SELECT u_password FROM user_signup WHERE u_email = '$u_username'";
+
+    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username' AND u_password = '$hashed_password'";
     $result = mysqli_query($con, $qry);
-    
-    if($result && mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_assoc($result);
-        $hashed_password = $row['u_password'];
-
-        // Verify the password
-        if(password_verify($u_password, $hashed_password)) {
-            echo '<script type="text/javascript"> alert("Logged in Successfully!"); window.location.assign("home.php"); </script>';
-        } else {
-            echo '<script type="text/javascript"> alert("Invalid Credentials!");</script>';
-        }
-    } else {
-        echo '<script type="text/javascript"> alert("Invalid Credentials!");</script>';
+    if(mysqli_num_rows($result) == 1)
+    {
+        echo '<script type="text/javascript"> alert("Logged in Successfully! "); window.location.assign("home.php"); </script>';
+    }
+    else
+    {
+        echo '<script type="text/javascript"> alert("failed! ");</script>';
     }
 }
 ?>
-
-
-
-
 
     <?php
         include 'container\footer.php';
