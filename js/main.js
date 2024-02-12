@@ -52,7 +52,7 @@ function toggle(){
     }
     else{
         document.getElementById("signuppassword").setAttribute("type", "text")
-        document.getElementById("eyeicon").style.color = 'blue'
+        document.getElementById("eyeicon").style.color = 'gold'
         document.getElementById("eyeicon").classList.add("fa-eye")
         document.getElementById("eyeicon").classList.remove("fa-eye-slash")
         state = true
@@ -69,7 +69,7 @@ function ctoggle(){
     }
     else{
         document.getElementById("csignuppassword").setAttribute("type", "text")
-        document.getElementById("ceyeicon").style.color = 'blue'
+        document.getElementById("ceyeicon").style.color = 'gold'
         document.getElementById("ceyeicon").classList.add("fa-eye")
         document.getElementById("ceyeicon").classList.remove("fa-eye-slash")
         state = true
@@ -143,3 +143,5 @@ function cupdatetoggle(){
         state = true
     }
 }
+
+    
