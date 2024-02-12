@@ -43,7 +43,6 @@
                 <li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>
             </div>
         </div>
-        
 
         <!-- <div class="browse-2">
             <ul class="browse-list">

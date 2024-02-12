@@ -16,7 +16,8 @@
     ?>
 
 <?php
-    $qry = "SELECT * FROM vehicles ORDER BY v_id DESC";
+    $id = $_GET['v_id'];
+    $qry = "SELECT * FROM vehicles WHERE v_id = '$id'";
     include 'container/db_connection.php';
     $result = mysqli_query($con, $qry);
     $row = mysqli_fetch_assoc($result);
@@ -35,13 +36,23 @@
             <div class="detail-imgs">
                 <div class="slideshow-container">
 
-                    <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
                         <img src="images/<?php echo $row['v_image1'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
-                    <?php } ?>
+
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">1 / 3</div> -->
+                        <img src="images/<?php echo $row['v_image2'];?>" style="width:100%">
+                        <!-- <div class="text">London, Ebgland</div> -->
+                    </div>
+
+                    <div class="mySlides fade">
+                        <!-- <div class="numbertext">1 / 3</div> -->
+                        <img src="images/<?php echo $row['v_image3'];?>" style="width:100%">
+                        <!-- <div class="text">London, Ebgland</div> -->
+                    </div>
     
                     <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-caret-left"></i></a>
                     <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-caret-right"></i></a>
@@ -51,10 +62,11 @@
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>`
+                    </div>
             </div>
 
             <script>
+                
                 var slideIndex = 1;
                 showSlides(slideIndex);
                 function plusSlides(n) {
@@ -89,7 +101,7 @@
                 <div class="description">
                     <p><b>Description:</b><br /><?php echo $row['v_description'];?></p>
                 </div>
-                <p><b>Brand:</b>&nbsp;<?php echo $row['v_name'];?></p>
+                <p><b>Type:</b>&nbsp;<?php echo $row['v_type'];?></p>
                 <p><b>Fuel:</b>&nbsp;<?php echo $row['v_fuel'];?></p>
                 <p><b>Seats:</b>&nbsp;2017 Honda Civic</p>
                 <p><b>Number:</b>&nbsp;<?php echo $row['v_number'];?></p>
@@ -98,10 +110,10 @@
                     <a href="#">Rent Now</a>
                 </div> -->
                 <div class="rent-now-btn">
-                    <button onclick="location.href = 'rent-now.php';" id="rentnowbtn">Rent Now</button>
+                    <button onclick="location.href = 'rent-now.php?v_id=<?php echo $row['v_id'];?>';" id="rentnowbtn">Rent Now</button>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="more-vehicles">
             <hr>
@@ -109,20 +121,7 @@
             <div class="more-vehicle-container">
                 <div class="vehicles-container">
 
-                <?php while($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class="box">
-                        <div class="box-img">
-                            <img src="images/<?php echo $row['v_image1'];?>">  
-                        </div>
-                        <h3><?php echo $row['v_name'];?></h3>
-                        <p><?php echo $row['v_type'];?></p>
-                        <div class="cost">
-                            <p>Rs.<?php echo $row['v_cost'];?> <span>/month</span><p>
-                        </div>
-                        <a href="details.php" class="btn">Details</a>
-                        <!-- <a href="#" class="btn">Rent Now</a> -->
-                    </div>
-                <?php } ?>  
+                <!-- more vehicles code is in the readme file -->
 
                 </div>
             </div>

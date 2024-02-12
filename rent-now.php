@@ -14,6 +14,17 @@
     <?php
         include 'container\header.php';
     ?>
+    
+<?php
+    $id = $_GET['v_id'];
+    $qry = "SELECT * FROM vehicles WHERE v_id = '$id'";
+    $qry3 = "SELECT * FROM user_signup";
+    include 'container/db_connection.php';
+    $result = mysqli_query($con, $qry);
+    $result2 = mysqli_query($con, $qry3);
+    $row = mysqli_fetch_assoc($result);
+    $row2 = mysqli_fetch_assoc($result2);
+?>  
 
     <!--Book-->
     <section class="Rent" id="rent">
@@ -22,24 +33,24 @@
                 <a href="vehicles.php"><i class="fa-solid fa-angle-left"></i> Back</a>
                 <span>Rent Now</span>
             </div>
-            <h1>2017 Honda Civic</h1>
+            <h1><?php echo $row['v_name'];?></h1>
         </div>  
         <div class="rent-container">
             <div class="detail-imgs">
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="images\about.png" style="width:100%">
+                        <img src="images\<?php echo $row['v_image1'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">2 / 3</div> -->
-                        <img src="images\image-2.jpg" style="width:100%">
+                        <img src="images\<?php echo $row['v_image2'];?>" style="width:100%">
                         <!-- <div class="text">Sunset in Romania</div> -->
                     </div>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">3 / 3</div> -->
-                        <img src="images\image-3.jpg" style="width:100%">
+                        <img src="images\<?php echo $row['v_image3'];?>" style="width:100%">
                         <!-- <div class="text">New York, USA</div> -->
                     </div>
                     <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-caret-left"></i></a>
@@ -84,7 +95,7 @@
             </script>
 
             <div class="renting-container">
-                <form class="renting-detail">
+                <form action="" class="renting-detail" method="POST">
                     <p>Book Now</p>
                     <label for="fromdate">From Date:</label>
                         <input type="date" name="fromdate" id="fromdate" required><br>
@@ -96,24 +107,48 @@
                         <textarea name="message" id="message" placeholder="Message" required></textarea>
                     <div class="payorcancel">
                         <div class="pay-now-btn">
-                            <button id="paynowbtn">Book</button>
+                            <button type="submit" name="submit" id="paynowbtn">Book</button>
                         </div>
                         <div class="cancel-btn">
-                            <button onclick="location.href = 'details.php';" id="cancel">Cancel</button>
+                            <button onclick="location.href = 'details.php?v_id=<?php echo $row['v_id'];?>';" id="cancel">Cancel</button>
                         </div>
                     </div>
                 </form>
             </div>
 
             <div class="v-details">
-                <p><b>Brand:</b>&nbsp;Honda</p>
-                <p><b>Cost:</b>&nbsp;$200</p>
+                <p><b>Type:</b>&nbsp;<?php echo $row['v_type'];?></p>
+                <p><b>Cost:</b>&nbsp;$<?php echo $row['v_cost'];?></p>
             </div>
-        </div> 
+        </div>  
     </section>
+
+<?php
+if(isset($_POST['submit']))
+{
+    $b_name = $row2['u_name'];
+    $b_vehicle = $row['v_name'];
+    $b_address = $_POST['address'];
+    $b_fromdate = $_POST['fromdate'];
+    $b_todate = $_POST['todate'];
+    $b_message = $_POST['message'];
+
+        $qry2 = "INSERT INTO bookings (b_name, b_vehicle, b_address, b_fromdate, b_todate, b_message) VALUES ('$b_name', '$b_vehicle', '$b_address', '$b_fromdate', '$b_todate', '$b_message')";
+        if(mysqli_query($con, $qry2))
+        {
+            
+            echo '<script type="text/javascript"> alert("Booked Successfully!"); window.location.assign("vehicles.php"); </script>';
+        }
+        else
+        {
+            echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
+        }
+    }
+?>
 
     <?php
         include 'container\footer.php';
     ?>
 </body>
 </html>
+

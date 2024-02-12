@@ -25,26 +25,70 @@
         <div class="contact-form">
             <p class="contact-txt"><i class="fa-solid fa-envelope"></i> Contact Us<p>
             <div class="c-inputs">
-                <input type="text" name="c-name" placeholder="Full Name" required>
-                <input type="text" name="c-email" placeholder="Email" required>
-                <input type="text" name="c-number" placeholder="Phone Number" required>
-                <!-- <input type="text" name="c-password" placeholder="Message"> -->
-                <textarea class="c-message" name="c-message" rows="4" required placeholder="Message"></textarea>
+                <input type="text" name="cnt_name" placeholder="Full Name" required>
+                <input type="text" name="cnt_email" placeholder="Email" required>
+                <input type="text" name="cnt_phone" placeholder="Phone Number" required>
+                <textarea class="c-message" name="cnt_message" rows="4" required placeholder="Message"></textarea>
             </div>
-            <input type="submit" name="c-submit" value="Submit">
+            <input type="submit" name="submit" value="Submit">
         </div>
 </form>
 
+
     <section class="newsletter">
         <h2>Subscribe for Updates</h2>
-        <div class="box">
-            <input type="email" placeholder="Enter Your Email..." required>
-            <a href="#" class="btn">Subscribe</a>
-        </div>
+        <form action="" method="POST" class="subscriber">
+            <div class="box">
+                <input name="subs_email" type="email" placeholder="Enter Your Email" required><br>
+                <button type="submit" name="subscribe" value="subscribe">Subscribe</button>
+            </div>
+        </form>
     </section>
+
+
+<?php
+if(isset($_POST['submit']))
+{
+    $cnt_name = $_POST['cnt_name'];
+    $cnt_email = $_POST['cnt_email'];
+    $cnt_phone = $_POST['cnt_phone'];
+    $cnt_message = $_POST['cnt_message'];
+
+    $qry = "INSERT INTO contact (cnt_name, cnt_email, cnt_phone, cnt_message) VALUES ('$cnt_name', '$cnt_email', '$cnt_phone', '$cnt_message')";
+    include 'container/db_connection.php';
+    if(mysqli_query($con, $qry))
+        {
+            echo '<script type="text/javascript"> alert("Submited Successfully!");</script>';
+        }
+        else
+        {
+            echo '<script type="text/javascript"> alert("Something Went Wrong!");</script>';
+        }
+    }
+
+elseif(isset($_POST['subscribe']))
+        {
+            $subs_email = $_POST['subs_email'];
+
+            $qry = "INSERT INTO subscribers (sub_email) VALUES ('$subs_email')";
+            include 'container/db_connection.php';
+            if(mysqli_query($con, $qry))
+                {
+                    echo '<script type="text/javascript"> alert("Subscribed Successfully!");</script>';
+                }
+                else
+                {
+                    echo '<script type="text/javascript"> alert("Something Went Wrong!");</script>';
+                }
+        }
+
+
+?>
+
 
     <?php
         include 'container\footer.php';
     ?>
 </body>
 </html>
+

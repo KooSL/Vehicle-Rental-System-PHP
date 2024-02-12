@@ -26,33 +26,43 @@
                 <input type="password" name="u_password" placeholder="Password" id="loginpassword" required>
                 <i class="fa-solid fa-eye-slash" id="logineyeicon" aria-hidden="true" onclicK="logintoggle()"></i>
             </div>
-            <p><a href="update-password.php" class="e-option">Forget Password?</a></p>
-            <input type="submit" value="Login">
+            <p><a href="get-email-update-password.php" class="e-option">Forget Password?</a></p>
+            <input type="submit" name="submit" value="Login">
             <p><a href="sign-up.php" class="e-option">Create new account</a></p>
         </form>
     </div>
 
-
 <?php
-if(isset($_POST['submit']))
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $u_email = $_POST['u_email'];
+    $u_username = $_POST['u_email'];
     $u_password = $_POST['u_password'];
-    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_email' AND u_password = md5('$u_password')";
-    include 'container/db_connection.php';
+
+    include 'admin-container/db_connection.php';
+    
+    // Retrieve the hashed password from the database
+    $qry = "SELECT u_password FROM user_signup WHERE u_email = '$u_username'";
     $result = mysqli_query($con, $qry);
-    if(mysqli_num_rows($result) == 1)
-    {
-        // $_SESSION['loggedin'] = "Yes";
-        // header('location: home.php');
-        echo '<script type="text/javascript"> alert("Log in Successfully!"); window.location.assign("home.php"); </script>';
-    }
-    else
-    {
+    
+    if($result && mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        $hashed_password = $row['u_password'];
+
+        // Verify the password
+        if(password_verify($u_password, $hashed_password)) {
+            echo '<script type="text/javascript"> alert("Logged in Successfully!"); window.location.assign("home.php"); </script>';
+        } else {
+            echo '<script type="text/javascript"> alert("Invalid Credentials!");</script>';
+        }
+    } else {
         echo '<script type="text/javascript"> alert("Invalid Credentials!");</script>';
     }
 }
 ?>
+
+
+
+
 
     <?php
         include 'container\footer.php';
