@@ -1,3 +1,23 @@
+<?php
+
+
+
+
+    session_start();
+    include 'container/db_connection.php';
+    if(isset($_SESSION['username'])){
+        $u_username = $_SESSION['username'];
+        $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username'";
+        $result = mysqli_query($con, $qry);
+        $row = mysqli_fetch_assoc($result);
+        $u_name = $row['u_name'];
+        $parts = explode(' ', $u_name);
+        $firstName = $parts[0];
+    }
+?>
+
+
+    
     <header>
         <!-- <a href="#" class="logo"><img src="/home/linuxkali/Documents/My-VSCode/Vehicle-Rental-System-2/images/jeep.png" alt=""></a> -->
         <a href="home.php" class="logo"><i class="fa-solid fa-car"></i> Sadhan <i class="fa-solid fa-motorcycle"></i></a>
@@ -10,12 +30,24 @@
             <li><a href="reviews.php">Reviews</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="about.php">About</a></li>
-            <li><a href="admin\dashboard.php">Dashboard</a></li>
+            <!-- <li><a href="admin\dashboard.php">Dashboard</a></li> -->
         </ul>
+
         <div class="header-btn">
-            <!-- <a href="#" class="sign-up">Sign Up</a> -->
+        <?php if (isset($_SESSION['username'])) { ?>
+            <div class="profile-menu">
+                <a href="profile.php" class="profile-name"><i class="fa-solid fa-user" ></i> <?php echo $firstName; ?></a>
+                <div class="dropdown-menu">
+                    <a href="#">Profile</a>
+                    <a href="#">My Bookings</a>
+                    <a href="log-out.php">Log Out</a>
+                </div>
+            </div>
+        <?php } else { ?>
             <a href="sign-up.php" class="sign-in"><i class="fa-solid fa-user"></i> Sign Up</a>
-        </div>
+        <?php } ?>
+    </div>
+
     </header>
 
     <!-- <script>
