@@ -103,7 +103,7 @@
                 </div>
                 <p><b>Type:</b>&nbsp;<?php echo $row['v_type'];?></p>
                 <p><b>Fuel:</b>&nbsp;<?php echo $row['v_fuel'];?></p>
-                <p><b>Seats:</b>&nbsp;2017 Honda Civic</p>
+                <p><b>Seats:</b>&nbsp;<?php echo $row['v_seat'];?></p>
                 <p><b>Number:</b>&nbsp;<?php echo $row['v_number'];?></p>
                 <p><b>Cost:</b>&nbsp;Rs.<?php echo $row['v_cost'];?></p>
                 <!-- <div class="rent-now-btn">

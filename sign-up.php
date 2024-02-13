@@ -67,7 +67,7 @@ if(isset($_POST['submit']))
 
     if($u_password == $u_cpassword)
     {
-        $qry = "INSERT INTO user_signup (u_name, u_address, u_email, u_phone, u_gender, u_password) VALUES ('$u_name', '$u_address', '$u_email', '$u_phone', '$u_gender', md5('$u_password'))";
+        $qry = "INSERT INTO user_signup (u_name, u_address, u_email, u_phone, u_gender, u_password) VALUES ('$u_name', '$u_address', '$u_email', '$u_phone', '$u_gender', '$u_password')";
         include 'container/db_connection.php';
         if(mysqli_query($con, $qry))
         {

@@ -1,3 +1,21 @@
+<?php
+
+
+
+
+
+
+
+
+    if(isset($_SESSION['username'])){
+        $u_username = $_SESSION['username'];
+        $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username'";
+        $result = mysqli_query($con, $qry);
+        $row3 = mysqli_fetch_assoc($result);
+        $u_name = $row3['u_name'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +144,7 @@
 <?php
 if(isset($_POST['submit']))
 {
-    $b_name = $row2['u_name'];
+    $b_name = $u_name;
     $b_vehicle = $row['v_name'];
     $b_address = $_POST['address'];
     $b_fromdate = $_POST['fromdate'];
