@@ -42,3 +42,15 @@
 
 
 <?php echo $row['b_id'];?>
+
+
+<div class="header-btn">
+            <?php if(isset($_SESSION['username'])){?>
+                <a href="log-out.php" class="log-out" onclick="return confirm('Are you sure to log out?')"><i class="fa-solid fa-user" ></i> <?php echo $firstName;?></a>
+            <?php }else{?>
+                <a href="sign-up.php" class="sign-in"><i class="fa-solid fa-user"></i> Sign Up</a>
+            <?php }?>
+        </div>
+
+
+        

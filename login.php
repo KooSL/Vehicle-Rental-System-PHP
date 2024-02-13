@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,23 +34,26 @@
     </div>
     
 <?php
-include 'container/db_connection.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $u_username = $_POST['u_email'];
     $u_password = $_POST['u_password'];
-    $hashed_password = md5($u_password);
+    // $hashed_password = md5($u_password);
     
 
-    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username' AND u_password = '$hashed_password'";
+    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username' AND u_password = '$u_password' ";
+    include 'container/db_connection.php';
     $result = mysqli_query($con, $qry);
     if(mysqli_num_rows($result) == 1)
     {
-        echo '<script type="text/javascript"> alert("Logged in Successfully! "); window.location.assign("home.php"); </script>';
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $u_username;
+        echo '<script type="text/javascript"> alert("Logged in Successfully!"); window.location.assign("home.php");</script>';
+        exit();
     }
     else
     {
-        echo '<script type="text/javascript"> alert("failed! ");</script>';
+        echo '<script type="text/javascript"> alert("Log in Failed!");</script>';
     }
 }
 ?>
@@ -60,3 +64,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 </body>
 </html>
+
