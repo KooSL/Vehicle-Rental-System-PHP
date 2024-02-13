@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,14 +43,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $a_username = $_POST['a_email'];
     $a_password = $_POST['a_password'];
+    
     $qry = "SELECT * FROM admin_login WHERE a_username = '$a_username' AND a_password = '$a_password' ";
     include 'admin-container/db_connection.php';
     $result = mysqli_query($con, $qry);
     if(mysqli_num_rows($result) == 1)
     {
-        // $_SESSION['loggedin'] = "Yes";
-        // header('location: home.php');
-        echo '<script type="text/javascript"> alert("Logged in Successfully!"); window.location.assign("dashboard.php"); </script>';
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $a_username;
+        echo '<script type="text/javascript"> alert("Logged in Successfully!");</script>';
+        header('location: dashboard.php');
+        exit();
     }
     else
     {
@@ -61,3 +68,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 </body>
 </html>
+
+
