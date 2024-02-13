@@ -106,13 +106,13 @@ header{
     font-weight: 500;
 }
 
-.header-btn .sign-in{
+.header-btn .sign-in, .header-btn .log-out, .header-btn .profile-name{
     /* background: #474fa0; */
     color: #fff;
     border-radius: 0.9rem;
 }
 
-.header-btn .sign-in:hover{
+.header-btn .sign-in:hover, .header-btn .profile-name:hover{
     background: var(--main-color);
     color: black;
 }
@@ -1395,3 +1395,40 @@ img {
     border-radius: 0.9rem;
 }
 
+.header-btn .profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.header-btn .profile-menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    left: 0; /* Align to the left of the profile name */
+    background-color: blue;
+    padding: 8px 8px;
+    border-radius: 0.9rem;
+    /* border: 1px solid #ddd; */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    z-index: 1; /* Ensure menu is above other content */
+}
+
+.header-btn .profile-menu:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 8px 12px;
+    /* border-bottom: 1px solid #ddd; */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dropdown-menu a:hover {
+    border-radius: 0.9rem;
+    background-color: gold;
+    color: black;
+}
