@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else
     {
-        echo '<script type="text/javascript"> alert("Log in Failed!");</script>';
+        echo '<script type="text/javascript"> alert("Invalid Credentials!");</script>';
     }
 }
 ?>

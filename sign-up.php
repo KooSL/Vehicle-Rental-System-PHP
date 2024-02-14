@@ -28,10 +28,10 @@
             <input type="text" name="u_email" placeholder="Email" required>
             <input type="text" name="u_phone" placeholder="Phone Number" required maxlength="15">
             <select name="u_gender" id="gender" required>
-                <option value="gender">Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="Gender">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
             </select>
             </div>
             <div class="sign-up-password-box">

@@ -1,12 +1,5 @@
 <?php
 
-
-
-
-
-
-
-
     if(isset($_SESSION['username'])){
         $u_username = $_SESSION['username'];
         $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username'";
@@ -145,17 +138,19 @@
 if(isset($_POST['submit']))
 {
     $b_name = $u_name;
+    $b_email = $u_username;
+    $v_id = $row['v_id'];
     $b_vehicle = $row['v_name'];
     $b_address = $_POST['address'];
     $b_fromdate = $_POST['fromdate'];
     $b_todate = $_POST['todate'];
     $b_message = $_POST['message'];
 
-        $qry2 = "INSERT INTO bookings (b_name, b_vehicle, b_address, b_fromdate, b_todate, b_message) VALUES ('$b_name', '$b_vehicle', '$b_address', '$b_fromdate', '$b_todate', '$b_message')";
+        $qry2 = "INSERT INTO bookings (v_id, b_name, b_email, b_vehicle, b_address, b_fromdate, b_todate, b_message) VALUES ('$v_id', '$b_name', '$b_email', '$b_vehicle', '$b_address', '$b_fromdate', '$b_todate', '$b_message')";
         if(mysqli_query($con, $qry2))
         {
             
-            echo '<script type="text/javascript"> alert("Booked Successfully!"); window.location.assign("vehicles.php"); </script>';
+            echo '<script type="text/javascript"> alert("Booked Successfully!"); window.location.assign("my-bookings.php"); </script>';
         }
         else
         {
