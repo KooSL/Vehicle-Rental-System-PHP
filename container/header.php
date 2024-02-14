@@ -11,6 +11,7 @@
         $result = mysqli_query($con, $qry);
         $row = mysqli_fetch_assoc($result);
         $u_name = $row['u_name'];
+        $u_id = $row['u_id'];
         $parts = explode(' ', $u_name);
         $firstName = $parts[0];
     }
@@ -30,17 +31,16 @@
             <li><a href="reviews.php">Reviews</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="about.php">About</a></li>
-            <!-- <li><a href="admin\dashboard.php">Dashboard</a></li> -->
+            <li><a href="admin\dashboard.php">Dashboard</a></li>
         </ul>
 
         <div class="header-btn">
         <?php if (isset($_SESSION['username'])) { ?>
             <div class="profile-menu">
-                <a href="profile.php" class="profile-name"><i class="fa-solid fa-user" ></i> <?php echo $firstName; ?></a>
+                <a href="user-profile.php?u_id=<?php echo $row['u_id'];?>" class="profile-name"><i class="fa-solid fa-user" ></i> <?php echo $firstName; ?></a>
                 <div class="dropdown-menu">
-                    <a href="#">Profile</a>
-                    <a href="#">My Bookings</a>
-                    <a href="log-out.php">Log Out</a>
+                    <a href="my-bookings.php"><i class="fa-solid fa-calendar"></i> My Bookings</a>
+                    <a href="log-out.php"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
                 </div>
             </div>
         <?php } else { ?>
