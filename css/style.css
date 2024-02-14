@@ -1432,3 +1432,16 @@ img {
     background-color: gold;
     color: black;
 }
+
+.no-bookings{
+    padding: 80px 0;
+    text-align: center;
+    background-color: #eeeff1;
+    border-radius: 0.9rem;
+}
+
+.booking-infos{
+    /* background-color: #dedfe2; */
+    border-radius: 0.9rem;
+    box-shadow: 2px 3px 5px gray;
+}
