@@ -25,6 +25,7 @@
         <tr>
           <th>S.N</th>
           <th>Name</th>
+          <th>Email</th>
           <th>Vehicle</th>
           <th>Address</th>
           <th>from Date</th>
@@ -42,70 +43,45 @@
           <tr>
             <td><?php echo $row['b_id'];?></td>
             <td><?php echo $row['b_name'];?></td>
+            <td><?php echo $row['b_email'];?></td>
             <td><?php echo $row['b_vehicle'];?></td>
             <td><?php echo $row['b_address'];?></td>
             <td><?php echo $row['b_fromdate'];?></td>
             <td><?php echo $row['b_todate'];?></td>
-            <td id="bookingstatus">Confirmed</td>
+            <td><?php echo $row['b_status'];?></td>
             <td>
-              <a href="bookings.php?b_id=<?php echo $row['b_id'];?>" class="confirm" onclick="return confirm('Are you sure to confirm this booking?')"><i class="fa-solid fa-check"></i></a>
+              <a href="bookings.php?confirm_id=<?php echo $row['b_id'];?>" class="confirm" onclick="return confirm('Are you sure to confirm this booking?')"><i class="fa-solid fa-check"></i></a>
 
-              <a href="?b_id=<?php echo $row['b_id'];?>" class="cancel" onclick="return confirm('Are you sure to cancel this booking?')" id="cancelbooking" name="cancelbookingbutton" value="Cancled"><i class="fa-solid fa-xmark"></i></a>
-              <a href="bookings.php?b_id=<?php echo $row['b_id'];?>" name="delete" class="delete" onclick="return confirm('Are you sure to delete?')"><i class="fa-solid fa-trash"></i></a>
+              <a href="bookings.php?cancel_id=<?php echo $row['b_id'];?>" class="cancel" onclick="return confirm('Are you sure to cancel this booking?')"><i class="fa-solid fa-xmark"></i></a>
+
+              <a href="bookings.php?delete_id=<?php echo $row['b_id'];?>" name="delete" class="delete" onclick="return confirm('Are you sure to delete?')"><i class="fa-solid fa-trash"></i></a>
               <!-- <button class="cancelbooking" onclick="return confirm('Are you sure to cancel this booking?')"><i class="fa-solid fa-xmark"></i></button> -->
 
             </td>
           </tr>
         <?php } ?>
-
-        <?php
-        //   if(isset($_POST['cancelbookingbutton'])){
-        //     $b_status = $_POST["cancelbookingbutton"];
-
-        //     $qry2 = "INSERT INTO bookings (b_status) VALUES ('$b_status')";
-        //     if(mysqli_query($con, $qry2)) {
-        //       echo "Value inserted successfully!";
-        //     } else {
-        //         echo "Error: " . $qry2 . "<br>" . mysqli_error($con);
-        //   }
-        //   } 
-        //   else {
-        //     echo "Error: Value not received.";
-        // }
-        ?>
    
       </table>
     </div>
 
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const cancelBookingLinks = document.querySelectorAll(".cancel");
-        const bookingStatusText = document.getElementById("bookingstatus-text");
-
-        const storedStatus = localStorage.getItem("bookingStatus");
-        if (storedStatus) {
-          bookingStatusText.textContent = storedStatus;
-        }
-
-        cancelBookingLinks.forEach(link => {
-          link.addEventListener("click", function(event) {
-            event.preventDefault();
-            
-            bookingStatusText.textContent = "Canceled";
-
-            localStorage.setItem("bookingStatus", "Canceled");
-          });
-        });
-      });
-    </script> -->
-
       <?php
-            if (isset($_GET['b_id'])) {
-              $id = $_GET['b_id'];
-              $qry3 = "DELETE FROM bookings WHERE b_id = '$id'";
-              $result = mysqli_query($con, $qry3);
+          if (isset($_GET['delete_id'])) {
+            $del_id = $_GET['delete_id'];
+            $qry3 = "DELETE FROM bookings WHERE b_id = '$del_id'";
+            $result = mysqli_query($con, $qry3);
           }
-            
+          elseif (isset($_GET['confirm_id'])) {
+            $confrim_id = $_GET['confirm_id'];
+            $b_status = "Confirmed";
+            $qry4 = "UPDATE bookings SET b_status = '$b_status' WHERE b_id = '$confrim_id'";
+            $result2 = mysqli_query($con, $qry4);
+          }
+          elseif (isset($_GET['cancel_id'])) {
+            $cancel_id = $_GET['cancel_id'];
+            $b_status = "Canceled";
+            $qry5 = "UPDATE bookings SET b_status = '$b_status' WHERE b_id = '$cancel_id'";
+            $result3 = mysqli_query($con, $qry5);
+          }
       ?>
 
     
