@@ -40,7 +40,7 @@
                 <p><b>Email:</b>&nbsp;<?php echo $row['u_email'];?></p>
                 <p><b>Phone:</b>&nbsp;<?php echo $row['u_phone'];?></p>
                 <p><b>Gender:</b>&nbsp;<?php echo $row['u_gender'];?></p>
-                <a href="#" class="btn"><i class="fa-solid fa-pen"></i> Edit</a>
+                <a href="edit-user-profile.php?u_id=<?php echo $row['u_id'];?>" class="btn"><i class="fa-solid fa-pen"></i> Edit</a>
             </div>
         </div> 
     </section>

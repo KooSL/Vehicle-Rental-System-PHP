@@ -35,6 +35,7 @@
                     $qry = "SELECT * FROM vehicles WHERE v_id = '$vid'";
                     $result = mysqli_query($con, $qry);
                     $row = mysqli_fetch_assoc($result);
+                    $status = $row2['b_status'];
                 ?>
                 <div class="box">
                     <div class="box-img">
@@ -55,9 +56,30 @@
                         <p><b>Address:</b>&nbsp;<?php echo $row2['b_address'];?></p>
                         <p><b>From:</b>&nbsp;<?php echo $row2['b_fromdate'];?></p>
                         <p><b>To:</b>&nbsp;<?php echo $row2['b_todate'];?></p>
+                        <?php
+                            $status = $row2['b_status'];
+                            if($status == ""){
+                                echo '<p><b>Status:</b>&nbsp;Pending</p>';
+                            }
+                            elseif($status == "Confirmed"){
+                                echo '<p><b>Status:</b>&nbsp;Confirmed</p>';
+                            }
+                            elseif($status == "Canceled"){
+                                echo '<p><b>Status:</b>&nbsp;Canceled</p>';
+                            }
+                        ?>
+                        <!-- <p><b>Status:</b>&nbsp;<?php echo $row2['b_status'];?></p> -->
                     </div>
                     <!-- <a href="details.php?v_id=<?php echo $row['v_id'];?>" class="btn">Details</a> -->
-                    <a href="rent-now.php?v_id=<?php echo $row['v_id'];?>" class="btn">Cancel Booking</a>
+                    <?php
+                        $status = $row2['b_status'];
+                        if($status == "Confirmed"){
+                            echo '<a href="#" class="btn">Cancel Booking</a>';
+                        }
+                        elseif($status == "Canceled"){
+                            echo '<a href="#" class="btn">Confirm Booking</a>';
+                        }
+                    ?>
                 </div>
                 <?php } 
 

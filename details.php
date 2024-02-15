@@ -110,7 +110,13 @@
                     <a href="#">Rent Now</a>
                 </div> -->
                 <div class="rent-now-btn">
-                    <button onclick="location.href = 'rent-now.php?v_id=<?php echo $row['v_id'];?>';" id="rentnowbtn">Rent Now</button>
+                    <?php if(isset($_SESSION['username'])){
+                        echo '<button onclick="location.href = \'rent-now.php?v_id=' . $row['v_id'] . '\'" id="rentnowbtn">Rent Now</button>';
+                    }
+                    else{
+                        echo '<button onclick="location.href = \'sign-up.php\'" id="rentnowbtn">Rent Now</button>';
+                    }
+                    ?> 
                 </div>
             </div>
         </div>

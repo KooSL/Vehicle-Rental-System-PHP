@@ -38,9 +38,27 @@
             <h1>Let's<span> Book</span> and <br>Ride Like Your
             <br><span>Own </span></h1><br><br>
     
+            <!-- <div class="browse-list-2"> -->
+                <!-- <?php if(isset($_SESSION['username'])){
+                //     echo '<li><a href="vehicles.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
+                //     echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
+                // }
+                // else{
+                //     echo '<li><a href="sign-up.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
+                //     echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
+                }
+                ?> -->
+            <!-- </div> -->
             <div class="browse-list-2">
-                <li><a href="#booknow"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>
-                <li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>
+            <?php if(isset($_SESSION['username'])){
+                echo '<li><a href="vehicles.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
+                echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
+            }
+            else{
+                echo '<li><a href="sign-up.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
+                echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
+            }
+            ?>
             </div>
         </div>
 

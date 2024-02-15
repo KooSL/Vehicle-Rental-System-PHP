@@ -66,7 +66,7 @@
             <?php while($row = mysqli_fetch_assoc($result)) { ?>
                 <div class="box">
                     <div class="box-img">
-                        <img src="images/<?php echo $row['v_image1'];?>">  
+                        <a href="details.php?v_id=<?php echo $row['v_id'];?>"><img src="images/<?php echo $row['v_image1'];?>"></a>  
                     </div>
 <!-- <i class="fa-solid fa-circle-check"></i>  -->
 
@@ -74,10 +74,25 @@
                     <p><?php echo $row['v_fuel'];?></p>
                     <div class="cost">
                         <p>Rs.<?php echo $row['v_cost'];?> <span>/month</span><p>
-                        <p class="avaibility" name="status" id="status"><i class="fa-solid fa-circle-check"></i> <?php echo $row['v_status'];?><p>
+                        <?php
+                            $v_status = $row['v_status'];
+                            if($v_status == "Available"){
+                                echo '<p class="available" name="status" id="status"><i class="fa-solid fa-circle-check"></i> Available<p>';
+                            }
+                            elseif($v_status == "Unavailable"){
+                                echo '<p class="unavailable" name="status" id="status"><i class="fa-solid fa-circle-xmark"></i> Unavailable<p>';
+                            }
+
+                        ?>
                     </div>
                     <a href="details.php?v_id=<?php echo $row['v_id'];?>" class="btn">Details</a>
-                    <a href="rent-now.php?v_id=<?php echo $row['v_id'];?>" class="btn">Rent Now</a>
+                    <?php if(isset($_SESSION['username'])){
+                        echo '<a href="rent-now.php?v_id=' . $row['v_id'] . '" class="btn">Rent Now</a>';
+                    }
+                    else{
+                        echo '<a href="sign-up.php" class="btn">Rent Now</a>';
+                    }
+                    ?>  
                 </div>
             <?php } ?>
         </div>
