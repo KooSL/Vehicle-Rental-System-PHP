@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2024 at 05:27 PM
+-- Generation Time: Feb 15, 2024 at 06:04 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.0.32
 
@@ -103,7 +103,7 @@ CREATE TABLE `vehicles` (
 
 INSERT INTO `vehicles` (`v_id`, `v_name`, `v_type`, `v_fuel`, `v_seat`, `v_number`, `v_cost`, `v_image1`, `v_image2`, `v_image3`, `v_description`, `v_status`) VALUES
 (8, 'dio', 'Car', 'petrol', 0, '45454', 20000, 'image-1.jpg', '', '', 'trhytr tryrtyrt ryrtyrty ryr rty r', 'Available'),
-(10, 'BMW', 'Car', 'diesel', 4, 'erwe45434', 100000, 'image-2.jpg', '', '', '87486', 'Available'),
+(10, 'BMW', 'Car', 'diesel', 4, 'erwe45434', 100000, '', '', '', '87486', 'Unavailable'),
 (12, 'Tesla', 'Car', 'ev', 6, 'hg56g5r6', 100000, 'image-3.jpg', '', '', 'ghfgh', 'Available');
 
 --
