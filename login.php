@@ -14,7 +14,7 @@
 <body>
     <!--Header-->
     <?php
-        include 'container\header.php';
+        include 'container/header.php';
     ?>
 
     <div class="login-body">
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 
     <?php
-        include 'container\footer.php';
+        include 'container/footer.php';
     ?>
 
 </body>

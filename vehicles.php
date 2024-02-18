@@ -73,7 +73,7 @@
                     <h3><?php echo $row['v_name'];?></h3>
                     <p><?php echo $row['v_fuel'];?></p>
                     <div class="cost">
-                        <p>Rs.<?php echo $row['v_cost'];?> <span>/month</span><p>
+                        <p>Rs.<?php echo $row['v_cost'];?> <span>/<?php echo $row['v_cunit'];?></span><p>
                         <?php
                             $v_status = $row['v_status'];
                             if($v_status == "Available"){

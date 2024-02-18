@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/ae61999827.js"></script>
-    <title>About Us</title>
+    <title>Profile</title>
 </head>
 <body>
     <!--Header-->
     <?php
-        include 'container\header.php';
+        include 'container/header.php';
     ?>
 
 <?php
@@ -20,17 +20,17 @@
     include 'container/db_connection.php';
     $result = mysqli_query($con, $qry);
     $row = mysqli_fetch_assoc($result);
-?> 
+?>
     
     <!--About-->
-    <section class="about" id="about">
+    <section class="profile" id="profile">
         <div class="heading">
             <span>Profile</span>
             <!-- <h1><?php echo $row['u_name'];?></h1> -->
         </div>  
-        <div class="about-container">
-            <div class="about-img">
-                <img src="images\profile-icon-png-898.png" alt="">
+        <div class="profile-container">
+            <div class="profile-img">
+                <img src="images\<?php echo $row['u_image'];?>" alt="">
                 <!-- <img src="/home/linuxkali/Documents/My-VSCode/Vehicle-Rental-System-2/images/pngwing.com.png" alt=""> -->
             </div>
             <div class="about-text">
@@ -40,6 +40,7 @@
                 <p><b>Email:</b>&nbsp;<?php echo $row['u_email'];?></p>
                 <p><b>Phone:</b>&nbsp;<?php echo $row['u_phone'];?></p>
                 <p><b>Gender:</b>&nbsp;<?php echo $row['u_gender'];?></p>
+                <p><b>Password:</b>&nbsp;******</p>
                 <a href="edit-user-profile.php?u_id=<?php echo $row['u_id'];?>" class="btn"><i class="fa-solid fa-pen"></i> Edit</a>
             </div>
         </div> 
@@ -61,7 +62,7 @@
 
 
     <?php
-        include 'container\footer.php';
+        include 'container/footer.php';
     ?>
 </body>
 </html>

@@ -18,7 +18,7 @@
 <body>
     <!--Header-->
     <?php
-        include 'container\header.php';
+        include 'container/header.php';
     ?>
 
     <!--Home-->
@@ -35,8 +35,7 @@
         </div>
 
         <div class="text"> 
-            <h1>Let's<span> Book</span> and <br>Ride Like Your
-            <br><span>Own </span></h1><br><br>
+            <h1>Adventure with just a<span> click</span>, <br>Rent Your ride online <span>today! </span></h1><br><br>
     
             <!-- <div class="browse-list-2"> -->
                 <!-- <?php if(isset($_SESSION['username'])){
@@ -129,7 +128,7 @@
         </div> -->
 
     <?php
-        include 'container\footer.php';
+        include 'container/footer.php';
     ?>
     
     <!--scrollReveal-->
