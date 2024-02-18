@@ -1,8 +1,4 @@
 <?php
-
-
-
-
     session_start();
     include 'container/db_connection.php';
     if(isset($_SESSION['username'])){
@@ -40,7 +36,7 @@
                 <a href="user-profile.php?u_id=<?php echo $row['u_id'];?>" class="profile-name"><i class="fa-solid fa-user" ></i> <?php echo $firstName; ?></a>
                 <div class="dropdown-menu">
                     <a href="my-bookings.php"><i class="fa-solid fa-calendar"></i> My Bookings</a>
-                    <a href="log-out.php"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+                    <a href="log-out.php" onclick="return confirm('Are you sure to log out?')"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
                 </div>
             </div>
         <?php } else { ?>
