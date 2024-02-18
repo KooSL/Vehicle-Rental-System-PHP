@@ -53,6 +53,15 @@
                 <input type="text" name="v_number" placeholder="Number"><br>
             <label for="cars">Vehicle Cost:</label>
                 <input type="text" name="v_cost" placeholder="Cost (Rs.)" required><br> 
+            <label for="cunit">Vehicle Cost Unit:</label>
+                <select name="v_cunit" id="cunit" required>
+                        <option>Select</option>
+                        <option value="hr">hr</option>
+                        <option value="day">day</option>
+                        <option value="week">week</option>
+                        <option value="month">month</option>
+                        <option value="year">year</option>
+                    </select><br>
             <label for="cars">Vehicle Image:</label><br>
                 <input type="file" name="v_image1" class="image-1" required accept="image/png, image/jpeg, image/jpg"><br>
                 <input type="file" name="v_image2" class="image-2" accept="image/png, image/jpeg, image/jpg"><br>
@@ -80,13 +89,14 @@ if(isset($_POST['submit']))
     $v_seat = $_POST['v_seat'];
     $v_number = $_POST['v_number'];
     $v_cost = $_POST['v_cost'];
+    $v_cunit = $_POST['v_cunit'];
     $v_image1 = $_POST['v_image1'];
     $v_image2 = $_POST['v_image2'];
     $v_image3 = $_POST['v_image3'];
     $v_description = $_POST['v_description'];
     $v_status = $_POST['v_status'];
 
-    $qry = "INSERT INTO vehicles (v_name, v_type, v_fuel, v_seat, v_number, v_cost, v_image1, v_image2, v_image3, v_description, v_status) VALUES ('$v_name', '$v_type', '$v_fuel', '$v_seat', '$v_number', '$v_cost', '$v_image1', '$v_image2', '$v_image3', '$v_description', '$v_status')";
+    $qry = "INSERT INTO vehicles (v_name, v_type, v_fuel, v_seat, v_number, v_cost, v_cunit, v_image1, v_image2, v_image3, v_description, v_status) VALUES ('$v_name', '$v_type', '$v_fuel', '$v_seat', '$v_number', '$v_cost', '$v_cunit', '$v_image1', '$v_image2', '$v_image3', '$v_description', '$v_status')";
     include 'admin-container/db_connection.php';
     if(mysqli_query($con, $qry))
     {

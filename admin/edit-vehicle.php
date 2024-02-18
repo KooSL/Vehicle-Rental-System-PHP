@@ -55,6 +55,15 @@
                 <input type="text" name="v_number" placeholder="Number" value="<?php echo $row['v_number'];?>" required><br>
             <label for="cars">Vehicle Cost:</label>
                 <input type="text" name="v_cost" placeholder="Cost (Rs.)" value="<?php echo $row['v_cost'];?>" required><br>
+            <label for="cunit">Vehicle Cost Unit:</label>
+                <select name="v_cunit" id="cunit" required>
+                        <option><?php echo $row['v_cunit'];?></option>
+                        <option value="hr">hr</option>
+                        <option value="day">day</option>
+                        <option value="week">week</option>
+                        <option value="month">month</option>
+                        <option value="year">year</option>
+                    </select><br>
             <label for="cars">Vehicle Image:</label><br>
                 <input type="file" name="photopath1" class="v_image1" value="<?php echo $row['v_image1'];?>"><br>
                 <input type="file" name="photopath2" class="v_image2" ><br>
@@ -80,6 +89,7 @@ if(isset($_POST['submit'])) {
     $v_seat = $_POST['v_seat'];
     $v_number = $_POST['v_number'];
     $v_cost = $_POST['v_cost'];
+    $v_cunit = $_POST['v_cunit'];
     $v_image1 = $_FILES['photopath1']['name'];
     $v_image2 = $_FILES['photopath2']['name'];
     $v_image3 = $_FILES['photopath2']['name'];
@@ -93,6 +103,7 @@ if(isset($_POST['submit'])) {
               v_seat = '$v_seat',
               v_number = '$v_number', 
               v_cost = '$v_cost', 
+              v_cunit = '$v_cunit', 
               v_image1 = '$v_image1', 
               v_image2 = '$v_image2', 
               v_image3 = '$v_image3', 
