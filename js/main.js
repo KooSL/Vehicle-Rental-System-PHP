@@ -79,14 +79,14 @@ function ctoggle(){
 function logintoggle(){
     if(state){
         document.getElementById("loginpassword").setAttribute("type", "password")
-        document.getElementById("logineyeicon").style.color = 'black'
+        document.getElementById("logineyeicon").style.color = 'white'
         document.getElementById("logineyeicon").classList.add("fa-eye-slash")
         document.getElementById("logineyeicon").classList.remove("fa-eye")
         state = false;
     }
     else{
         document.getElementById("loginpassword").setAttribute("type", "text")
-        document.getElementById("logineyeicon").style.color = 'blue'
+        document.getElementById("logineyeicon").style.color = 'gold'
         document.getElementById("logineyeicon").classList.add("fa-eye")
         document.getElementById("logineyeicon").classList.remove("fa-eye-slash")
         state = true
