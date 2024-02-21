@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 ?>
 
 <!DOCTYPE html>
@@ -49,10 +49,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $result = mysqli_query($con, $qry);
     if(mysqli_num_rows($result) == 1)
     {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $a_username;
-        echo '<script type="text/javascript"> alert("Logged in Successfully!");</script>';
-        header('location: dashboard.php');
+        // $_SESSION['loggedin'] = true;
+        // $_SESSION['username'] = $a_username;
+        echo '<script type="text/javascript"> alert("Logged in Successfully!"); window.location.assign("dashboard.php");</script>';
+        // header('location: dashboard.php');
         exit();
     }
     else

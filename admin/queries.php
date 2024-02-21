@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,37 +19,32 @@
   
   <main class="main">
     <section class="title">
-      <p>Customers</p>
+      <p>Queries</p>
     </section>
-    <div class="customer-table">
+    <div class="query-table">
       <table>
         <tr>
           <th>S.N</th>
           <th>Name</th>
-          <th>Image</th>
-          <th>Address</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>Gender</th>
-          <th>Reg. Date</th>
+          <th>Message</th>
+          <th>Date</th>
         </tr>
 <?php
-    $qry = "SELECT * FROM user_signup ORDER BY u_id DESC";
+    $qry = "SELECT * FROM contact ORDER BY cnt_id DESC";
     include 'admin-container/db_connection.php';
     $result = mysqli_query($con, $qry);
 ?>
 
         <?php while($row = mysqli_fetch_assoc($result)) { ?>
           <tr>
-            <td><?php echo $row['u_id'];?></td>
-            <td><?php echo $row['u_name'];?></td>
-            <td><img src="../images/<?php echo $row['u_image'];?>" alt="" style="width:100px"></td>
-            <td><?php echo $row['u_address'];?></td>
-            <td><?php echo $row['u_email'];?></td>
-            <td><?php echo $row['u_phone'];?></td>
-            <td><?php echo $row['u_gender'];?></td>
-            <td><?php echo $row['u_reg_date'];?></td>
-          </tr>
+            <td><?php echo $row['cnt_id'];?></td>
+            <td><?php echo $row['cnt_name'];?></td>
+            <td><?php echo $row['cnt_email'];?></td>
+            <td><?php echo $row['cnt_phone'];?></td>
+            <td><?php echo $row['cnt_message'];?></td>
+            <td><?php echo $row['cnt_date'];?></td>
         <?php } ?>
 
       </table>

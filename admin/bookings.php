@@ -25,11 +25,13 @@
         <tr>
           <th>S.N</th>
           <th>Name</th>
+          <th>Image</th>
           <th>Email</th>
           <th>Vehicle</th>
           <th>Address</th>
           <th>from Date</th>
           <th>To Date</th>
+          <th>Message</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -43,11 +45,13 @@
           <tr>
             <td><?php echo $row['b_id'];?></td>
             <td><?php echo $row['b_name'];?></td>
+            <td><img src="../images/<?php echo $row['bv_image'];?>" alt="" style="width:100px"></td>
             <td><?php echo $row['b_email'];?></td>
             <td><?php echo $row['b_vehicle'];?></td>
             <td><?php echo $row['b_address'];?></td>
             <td><?php echo $row['b_fromdate'];?></td>
             <td><?php echo $row['b_todate'];?></td>
+            <td><?php echo $row['b_message'];?></td>
             <td><?php echo $row['b_status'];?></td>
             <td>
               <a href="bookings.php?confirm_id=<?php echo $row['b_id'];?>" class="confirm" onclick="return confirm('Are you sure to confirm this booking?')"><i class="fa-solid fa-check"></i></a>

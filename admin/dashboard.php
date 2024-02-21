@@ -6,16 +6,19 @@
     $qry2= "SELECT * FROM vehicles";
     $qry3= "SELECT * FROM bookings";
     $qry4= "SELECT * FROM categories";
+    $qry5= "SELECT * FROM contact";
  
     $customers = mysqli_query($con, $qry1);
     $vehicles = mysqli_query($con, $qry2);
     $bookings = mysqli_query($con, $qry3);
     $categories = mysqli_query($con, $qry4);
+    $queries = mysqli_query($con, $qry5);
 
     $rows_count_customers = mysqli_num_rows($customers);
     $rows_count_vehicles = mysqli_num_rows($vehicles);
     $rows_count_bookings = mysqli_num_rows($bookings);
     $rows_count_categories = mysqli_num_rows($categories);
+    $rows_count_queries = mysqli_num_rows($queries);
 
 ?>
 
@@ -61,6 +64,11 @@
         <P><?php echo $rows_count_customers;?></P>
         <P>Customers</P>
         <a href="customers.php" class="btn">View Details</a>
+      </div>
+      <div class="card">
+        <P><?php echo $rows_count_queries;?></P>
+        <P>Queries</P>
+        <a href="queries.php" class="btn">View Details</a>
       </div>
       <!-- <div class="card">
         <P></P>
