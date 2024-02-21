@@ -118,7 +118,7 @@ header{
 }
 
 .home{
-    background-image: url("images/Background-image-2-5.png");
+    background-image: url("images/Background-image-2-9.png");
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -486,8 +486,13 @@ header{
     padding: 30px;
 }
 
-.about-img img, .detail-imgs img{
+.detail-imgs img{
     width: 100%;
+}
+
+.about-img img{
+    width: 80%;
+    margin-left: 40px;
 }
 
 .profile-img img{
@@ -897,12 +902,12 @@ footer{
 } */
 
 .signup-body{
-    background-image: url("images/signup-bg-5.png");
+    background-image: url("images/signup-bg-7.png");
     width: 100%;
     min-height: 100vh;
     position: relative;
     background-repeat: no-repeat;
-    background-position:center right;
+    background-position:center;
     background-size: cover;
     display: grid;
     align-items: center;
