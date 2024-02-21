@@ -121,7 +121,7 @@
                             <button type="submit" name="submit" id="paynowbtn">Book</button>
                         </div>
                         <div class="cancel-btn">
-                            <button onclick="location.href = 'details.php?v_id=<?php echo $row['v_id'];?>';" id="cancel">Cancel</button>
+                            <a onclick="location.href = 'details.php?v_id=<?php echo $row['v_id'];?>';" id="cancel">Cancel</a>
                         </div>
                     </div>
                 </form>
@@ -141,6 +141,7 @@ if(isset($_POST['submit']))
     $b_email = $u_username;
     $v_id = $row['v_id'];
     $b_vehicle = $row['v_name'];
+    $bv_image = $row['v_image1'];
     $b_address = $_POST['address'];
     $b_fromdate = $_POST['fromdate'];
     $b_todate = $_POST['todate'];

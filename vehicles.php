@@ -33,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="form-container">
+        <!-- <div class="form-container">
             <form>
                 <div class="input-box">
                     <span>Location</span>
@@ -49,7 +49,7 @@
                 </div>
                 <input type="submit" name="" id="" class="btn">
             </form>
-        </div>  
+        </div>   -->
 
         <div class="heading">
             <h1>Explore Out Top Deals</h1>

@@ -22,7 +22,7 @@
         </div>  
         <div class="about-container">
             <div class="about-img">
-                <img src="images\about.png" alt="">
+                <img src="images\about-img.png" alt="">
                 <!-- <img src="/home/linuxkali/Documents/My-VSCode/Vehicle-Rental-System-2/images/pngwing.com.png" alt=""> -->
             </div>
             <div class="about-text">
