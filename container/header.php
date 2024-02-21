@@ -27,7 +27,7 @@
             <li><a href="reviews.php">Reviews</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="about.php">About</a></li>
-            <li><a href="admin\dashboard.php">Dashboard</a></li>
+            <!-- <li><a href="admin\dashboard.php">Dashboard</a></li> -->
         </ul>
 
         <div class="header-btn">
@@ -40,7 +40,13 @@
                 </div>
             </div>
         <?php } else { ?>
-            <a href="sign-up.php" class="sign-in"><i class="fa-solid fa-user"></i> Sign Up</a>
+            <!-- <a href="sign-up.php" class="sign-in"><i class="fa-solid fa-user"></i> Sign Up</a> -->
+            <div class="profile-menu">
+                <a href="sign-up.php" class="profile-name"><i class="fa-solid fa-user" ></i> Sign Up</a>
+                <div class="dropdown-menu">
+                    <a href="login.php"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                </div>
+            </div>
         <?php } ?>
     </div>
 
