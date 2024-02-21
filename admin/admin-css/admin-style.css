@@ -204,7 +204,7 @@ header{
     /* bottom: 0; */
   }
 
-.booking-table, .vehicle-table, .customer-table, .category-table{
+.booking-table, .vehicle-table, .customer-table, .category-table, .query-table{
     padding: 25px;
     background-color: #eeeff1;
     /* border-radius: 0.9rem; */
