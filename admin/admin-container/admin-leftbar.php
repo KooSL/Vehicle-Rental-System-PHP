@@ -11,6 +11,7 @@
         <li><a href="vehicles.php" class="nav-item"><i class="fa-solid fa-car"></i> Vehicles</a></li>
         <li><a href="categories.php" class="nav-item"><i class="fa-solid fa-list"></i> Categories</a></li>
         <li><a href="customers.php" class="nav-item"><i class="fa-solid fa-user"></i> Customers</a></li>
+        <li><a href="queries.php" class="nav-item"><i class="fa-solid fa-clipboard-question"></i> Queries</a></li>
         
         <!-- <li><a href="" class="logout">
           <i class="fas fa-sign-out-alt"></i>
