@@ -72,23 +72,23 @@ header{
     padding: 10px 10px;
     border-radius: 0.9rem;
 }
+/* 
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+  } */
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active{
+    background-color: #666;
+    color: white;
+  }
 
-/* .navbar a::after{
-    content: "";
-    width: 0;
-    height: 2px;
-    position: absolute;
-    bottom:-4px;
-    left: 0;
-    transition: all ease-in-out 0.2s;
-    background-color: gold;
-}
-
-.active, .navbar a:hover::after{
-    width: 100%;
-} */
-
-.active, .navbar a:hover{
+.navbar a:hover{
     background-color: gold;
     color: #000000;
 }
@@ -1092,7 +1092,7 @@ footer{
 }
 
 .login-body{
-    background-image: url("images/login-bg-9.png");
+    background-image: url("images/login-bg-3.png");
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -1188,8 +1188,11 @@ input::placeholder{
 }
 
 .login-form p a{
+    padding: 3px;
+    border-radius: 0.5rem;
+    background-color: #eeeff17c;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: blue;
     font-size: 100%;
 }
 
@@ -1216,7 +1219,7 @@ input::placeholder{
 }  
 
 .login-form .e-option:hover{
-    color: blue;
+    color: gold;
     transition: all ease-in-out 0.2s;
 }
 
