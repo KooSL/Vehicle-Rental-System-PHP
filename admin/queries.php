@@ -30,6 +30,7 @@
           <th>Phone</th>
           <th>Message</th>
           <th>Date</th>
+          <th>Action</th>
         </tr>
 <?php
     $qry = "SELECT * FROM contact ORDER BY cnt_id DESC";
@@ -45,6 +46,11 @@
             <td><?php echo $row['cnt_phone'];?></td>
             <td><?php echo $row['cnt_message'];?></td>
             <td><?php echo $row['cnt_date'];?></td>
+            <td>
+              <?php $cnt_email = md5($row['cnt_email']); ?>
+              <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="confirm"><i class="fa-solid fa-envelope"></i></a>
+              <!-- <a href="vehicles.php?v_id=<?php echo $row['v_id'];?>" name="delete" class="delete" onclick="return confirm('Are you sure to delete?')"><i class="fa-solid fa-trash"></i></a> -->
+            </td>
         <?php } ?>
 
       </table>
