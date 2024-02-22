@@ -107,7 +107,7 @@
 
             <div class="renting-container">
                 <form action="" class="renting-detail" method="POST">
-                    <p>Booking Details</p>
+                    <p>Book Now</p>
                     <label for="fromdate">From Date:</label>
                         <input type="date" name="fromdate" id="fromdate" required><br>
                     <label for="todate">To Date:</label>
@@ -115,18 +115,7 @@
                     <label for="address">Address:</label>
                         <input type="text" name="address" id="address" placeholder="Address" required><br>
                     <label for="message">Message:</label><br>
-                        <textarea name="message" id="message" placeholder="Message" required></textarea><br>
-
-
-                    <p>payment Details</p>
-                    <label for="name">Name on Card:</label>
-                        <input type="text" name="crd_name" id="name" placeholder="Name" required><br>
-                    <label for="number">Card Number:</label>
-                        <input type="number" name="crd_number" id="number" placeholder="Number" required><br>
-                    <label for="expdate">Exp. Date:</label>
-                        <input type="date" name="crd_expdate" id="expdate" required><br>
-                    <label for="cvv">CVV Number:</label>
-                        <input type="number" name="crd_cvv" id="cvv" placeholder="CVV" required><br>
+                        <textarea name="message" id="message" placeholder="Message" required></textarea>
                     <div class="payorcancel">
                         <div class="pay-now-btn">
                             <button type="submit" name="submit" id="paynowbtn">Book</button>
