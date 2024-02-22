@@ -21,13 +21,12 @@
 
        <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar" id="myDIV">
-            <li><a href="home.php" class="btn active">Home</a></li>
-            <li><a href="vehicles.php">Vehicles</a></li>
-            <!-- <li><a href="services.php">services</a></li> -->
-            <li><a href="reviews.php">Reviews</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="about.php">About</a></li>
-            <!-- <li><a href="admin\dashboard.php">Dashboard</a></li> -->
+            <li><a href="home.php" class="btn">Home</a></li>
+            <li><a href="vehicles.php" class="btn">Vehicles</a></li>
+            <li><a href="reviews.php" class="btn">Reviews</a></li>
+            <li><a href="contact.php" class="btn">Contact</a></li>
+            <li><a href="about.php" class="btn">About</a></li>
+            <li><a href="admin\dashboard.php">Dashboard</a></li>
         </ul>
 
         <div class="header-btn">
@@ -52,16 +51,19 @@
 
     </header>
 
-    <!-- <script>
+    <script>
+        // Add active class to the current button (highlight it)
         var header = document.getElementById("myDIV");
         var btns = header.getElementsByClassName("btn");
         for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
         var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
+        if (current.length > 0) { 
+            current[0].className = current[0].className.replace(" active", "");
+        }
         this.className += " active";
         });
         }
-    </script> -->
+    </script>
 </body>
 </html>
