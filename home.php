@@ -26,11 +26,11 @@
 
         <div class="browse">
             <ul class="browse-list">
-                <li><a href="#cars"><i class="fa-solid fa-car"></i> Cars</a></li>
-                <li><a href="#bikes"><i class="fa-solid fa-motorcycle"></i> Bikes</a></li>
-                <li><a href="#cycles"><i class="fa-solid fa-bicycle"></i> Cycles</a></li>
-                <li><a href="#trucks"><i class="fa-solid fa-truck"></i> Trucks</a></li>
-                <li><a href="vehicles.php"><i class="fa-solid fa-bars"></i> More</a></li>
+                <li><a href="vehicles.php?v_type=car" data-filter="car"><i class="fa-solid fa-car"></i> Cars</a></li>
+                <li><a href="vehicles.php?v_type=bike" data-filter="bike"><i class="fa-solid fa-motorcycle"></i> Bikes</a></li>
+                <li><a href="vehicles.php?v_type=cycle" data-filter="cycle"><i class="fa-solid fa-bicycle"></i> Cycles</a></li>
+                <li><a href="vehicles.php?v_type=truck" data-filter="truck"><i class="fa-solid fa-truck"></i> Trucks</a></li>
+                <li><a href="vehicles.php?v_type=all" data-filter="helicopter"><i class="fa-solid fa-list"></i> More</a></li>
             </ul>
         </div>
 
