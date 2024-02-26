@@ -105,7 +105,7 @@
                 <p><b>Fuel:</b>&nbsp;<?php echo $row['v_fuel'];?></p>
                 <p><b>Seats:</b>&nbsp;<?php echo $row['v_seat'];?></p>
                 <p><b>Number:</b>&nbsp;<?php echo $row['v_number'];?></p>
-                <p><b>Cost:</b>&nbsp;Rs.<?php echo $row['v_cost'];?></p>
+                <p><b>Cost:</b>&nbsp;Rs.<?php echo $row['v_cost'];?><span>/<?php echo $row['v_cunit'];?></span></p>
                 <!-- <div class="rent-now-btn">
                     <a href="#">Rent Now</a>
                 </div> -->
@@ -123,11 +123,38 @@
 
         <div class="more-vehicles">
             <hr>
-            <p>More Vehicles:</p>
+            <p class="more-vehicles-text">More Vehicles:</p>
             <div class="more-vehicle-container">
                 <div class="vehicles-container">
 
-                <!-- more vehicles code is in the readme file -->
+                <?php
+                    $v_category = $row['v_type'];
+                    $qry2 = "SELECT * FROM vehicles WHERE v_id <> '$id' AND v_type = '$v_category'";
+                    $result2 = mysqli_query($con, $qry2);
+                ?>
+                
+                
+                <?php 
+                    if(mysqli_num_rows($result2) > 0){
+                        while($rows = mysqli_fetch_assoc($result2)) { ?>
+                            <div class="box">
+                                <div class="box-img">
+                                    <img src="images/<?php echo $rows['v_image1'];?>">  
+                                </div>
+                                <h3><?php echo $rows['v_name'];?></h3>
+                                <p><?php echo $rows['v_fuel'];?></p>
+                                <div class="more-vehicles-cost">
+                                    <p>Rs.<?php echo $rows['v_cost'];?><span>/<?php echo $rows['v_cunit'];?></span></p>
+                                </div>
+                                
+                                <a href="details.php?v_id=<?php echo $rows['v_id'];?>" class="btn">Details</a>
+                            </div>
+                        <?php }
+                    } else {
+                        echo '<p class="no-bookings">No Same type of vehicles found!</p>';
+                    }
+                ?>
+
 
                 </div>
             </div>
@@ -139,3 +166,4 @@
     ?>
 </body>
 </html>
+

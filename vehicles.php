@@ -54,44 +54,46 @@
                 include 'container/db_connection.php';
                 $result = mysqli_query($con, $qry);
                 $hasVehicles = false;
-                while($row = mysqli_fetch_assoc($result)) {
-                    if ($vehicleType === 'all' || strtolower($row['v_type']) === $vehicleType) {
-                        $hasVehicles = true;
-            ?>
-                <div class="box <?php echo strtolower($row['v_type']); ?>">
-                    <div class="box-img">
-                        <a href="details.php?v_id=<?php echo $row['v_id'];?>"><img src="images/<?php echo $row['v_image1'];?>"></a>  
-                    </div>
-                    <h3><?php echo $row['v_name'];?></h3>
-                    <p><?php echo $row['v_fuel'];?></p>
-                    <div class="cost">
-                        <p>Rs.<?php echo $row['v_cost'];?> <span>/<?php echo $row['v_cunit'];?></span></p>
-                        <?php
-                            $v_status = $row['v_status'];
-                            if($v_status == "Available"){
-                                echo '<p class="available" name="status" id="status"><i class="fa-solid fa-circle-check"></i> Available</p>';
-                            }
-                            elseif($v_status == "Unavailable"){
-                                echo '<p class="unavailable" name="status" id="status"><i class="fa-solid fa-circle-xmark"></i> Unavailable</p>';
-                            }
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)) {
+                        if ($vehicleType === 'all' || strtolower($row['v_type']) === $vehicleType) {
+                            $hasVehicles = true;
+                    ?>
+                    <div class="box <?php echo strtolower($row['v_type']); ?>">
+                        <div class="box-img">
+                            <a href="details.php?v_id=<?php echo $row['v_id'];?>"><img src="images/<?php echo $row['v_image1'];?>"></a>  
+                        </div>
+                        <h3><?php echo $row['v_name'];?></h3>
+                        <p><?php echo $row['v_fuel'];?></p>
+                        <div class="cost">
+                            <p>Rs.<?php echo $row['v_cost'];?><span>/<?php echo $row['v_cunit'];?></span></p>
+                            <?php
+                                $v_status = $row['v_status'];
+                                if($v_status == "Available"){
+                                    echo '<p class="available" name="status" id="status"><i class="fa-solid fa-circle-check"></i> Available</p>';
+                                }
+                                elseif($v_status == "Unavailable"){
+                                    echo '<p class="unavailable" name="status" id="status"><i class="fa-solid fa-circle-xmark"></i> Unavailable</p>';
+                                }
+                            ?>
+                        </div>
+                        <a href="details.php?v_id=<?php echo $row['v_id'];?>" class="btn">Details</a>
+                        <?php if(isset($_SESSION['username'])){
+                            echo '<a href="rent-now.php?v_id=' . $row['v_id'] . '" class="btn">Rent Now</a>';
+                        }
+                        else{
+                            echo '<a href="sign-up.php" class="btn">Rent Now</a>';
+                        }
                         ?>
                     </div>
-                    <a href="details.php?v_id=<?php echo $row['v_id'];?>" class="btn">Details</a>
-                    <?php if(isset($_SESSION['username'])){
-                        echo '<a href="rent-now.php?v_id=' . $row['v_id'] . '" class="btn">Rent Now</a>';
-                    }
-                    else{
-                        echo '<a href="sign-up.php" class="btn">Rent Now</a>';
-                    }
-                    ?>  
-                </div>
-            <?php 
+                    <?php 
+                        }
+                    } 
                 }
-            } 
-        ?>
-            <?php if (!$hasVehicles) { ?>
-                <div id="no-vehicles-message" style="display: none;">No vehicles available for this category.</div>
-            <?php } ?>
+                else{
+                    echo '<p class="no-bookings">No Vehicles found!</p>';
+                }
+            ?>
         </div>
     </section>
 

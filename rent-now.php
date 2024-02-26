@@ -118,7 +118,7 @@
                         <textarea name="message" id="message" placeholder="Message" required></textarea><br>
 
 
-                    <p>payment Details</p>
+                    <!-- <p>payment Details</p>
                     <label for="name">Name on Card:</label>
                         <input type="text" name="crd_name" id="name" placeholder="Name" required><br>
                     <label for="number">Card Number:</label>
@@ -126,7 +126,9 @@
                     <label for="expdate">Exp. Date:</label>
                         <input type="date" name="crd_expdate" id="expdate" required><br>
                     <label for="cvv">CVV Number:</label>
-                        <input type="number" name="crd_cvv" id="cvv" placeholder="CVV" required><br>
+                        <input type="number" name="crd_cvv" id="cvv" placeholder="CVV" required><br> -->
+
+
                     <div class="payorcancel">
                         <div class="pay-now-btn">
                             <button type="submit" name="submit" id="paynowbtn">Book</button>
@@ -140,7 +142,7 @@
 
             <div class="v-details">
                 <p><b>Type:</b>&nbsp;<?php echo $row['v_type'];?></p>
-                <p><b>Cost:</b>&nbsp;$<?php echo $row['v_cost'];?></p>
+                <p><b>Cost:</b>&nbsp;NPR.<?php echo $row['v_cost'];?></p>
             </div>
         </div>  
     </section>
@@ -157,8 +159,10 @@ if(isset($_POST['submit']))
     $b_fromdate = $_POST['fromdate'];
     $b_todate = $_POST['todate'];
     $b_message = $_POST['message'];
+    $current_date = date("Y-m-d");
 
-        $qry2 = "INSERT INTO bookings (v_id, b_name, b_email, b_vehicle, b_address, b_fromdate, b_todate, b_message) VALUES ('$v_id', '$b_name', '$b_email', '$b_vehicle', '$b_address', '$b_fromdate', '$b_todate', '$b_message')";
+    if($b_fromdate >= $current_date && $b_todate >= $current_date && $b_fromdate <= $b_todate){
+        $qry2 = "INSERT INTO bookings (v_id, b_name, bv_image, b_email, b_vehicle, b_address, b_fromdate, b_todate, b_message) VALUES ('$v_id', '$b_name', '$bv_image', '$b_email', '$b_vehicle', '$b_address', '$b_fromdate', '$b_todate', '$b_message')";
         if(mysqli_query($con, $qry2))
         {
             
@@ -169,6 +173,10 @@ if(isset($_POST['submit']))
             echo '<script type="text/javascript"> alert("Something Went Wrong!") </script>';
         }
     }
+    else{
+        echo '<script type="text/javascript"> alert("Please select correct date!") </script>';
+    }
+}
 ?>
 
     <?php

@@ -47,7 +47,7 @@
                     <p><b>Fuel:</b>&nbsp;<?php echo $row['v_fuel'];?></p>
                     <p><b>Seats:</b>&nbsp;<?php echo $row['v_seat'];?></p>
                     <p><b>Number:</b>&nbsp;<?php echo $row['v_number'];?></p>
-                    <p><b>Cost:</b>&nbsp;Rs.<?php echo $row['v_cost'];?></p>
+                    <p><b>Cost:</b>&nbsp;Rs.<?php echo $row['v_cost'];?><span>/<?php echo $row['v_cunit'];?></span></p>
                     <div class="cost">
                         <!-- <p>Rs.<?php echo $row['v_cost'];?> <span>/month</span><p> -->
                         <!-- <p class="avaibility" name="status" id="status"><i class="fa-solid fa-circle-check"></i> <?php echo $row['v_status'];?><p> -->
