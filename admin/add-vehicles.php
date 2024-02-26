@@ -34,18 +34,18 @@
             <label for="type">Choose the category:</label>
                 <select name="v_type" id="type" required>
                 <?php while($row = mysqli_fetch_assoc($result)){  ?>
-                    <option><?php echo $row['c_name'];?></option>
+                    <option><?php echo $row['c_name'];?> - <?php echo $row['c_type'];?></option>
                 <?php } ?>
                 </select><br>
             <label for="fuel">Choose the fuel:</label>
                 <select name="v_fuel" id="fuel">
                     <option value="Select">Select</option>
                     <option value="None">None</option>
-                    <option value="petrol">Petrol</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="ev">EV</option>
-                    <option value="cng">CNG</option>
-                    <option value="hybrid">Hybrid</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="EV">EV</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Hybrid">Hybrid</option>
                 </select><br>
             <label for="cars">Vehicle Seat:</label>
                 <input type="number" name="v_seat" placeholder="Seat Number"><br>

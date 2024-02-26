@@ -61,7 +61,7 @@
             <td><?php echo $row['v_number'];?></td>
             <td><?php echo $row['v_cost'];?></td>
             <td><?php echo $row['v_cunit'];?></td>
-            <td><?php echo $row['v_description'];?></td>
+            <td style="width:170px; font-size: 13px"><?php echo $row['v_description'];?></td>
             <td><img src="../images/<?php echo $row['v_image1'];?>" alt="" style="width:100px"></td>
             <td><?php echo $row['v_status'];?></td>
             <td>

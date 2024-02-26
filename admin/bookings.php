@@ -43,15 +43,15 @@
 ?>  
         <?php while($row = mysqli_fetch_assoc($result)) { ?>
           <tr>
-            <td><?php echo $row['b_id'];?></td>
-            <td><?php echo $row['b_name'];?></td>
+            <td style="width:170px; font-size: 13px"><?php echo $row['b_id'];?></td>
+            <td style="width:170px; font-size: 13px"><?php echo $row['b_name'];?></td>
             <td><img src="../images/<?php echo $row['bv_image'];?>" alt="" style="width:100px"></td>
-            <td><?php echo $row['b_email'];?></td>
-            <td><?php echo $row['b_vehicle'];?></td>
-            <td><?php echo $row['b_address'];?></td>
-            <td><?php echo $row['b_fromdate'];?></td>
-            <td><?php echo $row['b_todate'];?></td>
-            <td><?php echo $row['b_message'];?></td>
+            <td  style="width:170px; font-size: 13px"><?php echo $row['b_email'];?></td>
+            <td  style="width:170px; font-size: 13px"><?php echo $row['b_vehicle'];?></td>
+            <td  style="width:170px; font-size: 13px"><?php echo $row['b_address'];?></td>
+            <td  style="width:170px; font-size: 13px"><?php echo $row['b_fromdate'];?></td>
+            <td  style="width:170px; font-size: 13px"><?php echo $row['b_todate'];?></td>
+            <td  style="width:170px; font-size: 13px"><?php echo $row['b_message'];?></td>
             <td><?php echo $row['b_status'];?></td>
             <td>
               <a href="bookings.php?confirm_id=<?php echo $row['b_id'];?>" class="confirm" onclick="return confirm('Are you sure to confirm this booking?')"><i class="fa-solid fa-check"></i></a>
