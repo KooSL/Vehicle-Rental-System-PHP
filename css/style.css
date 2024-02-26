@@ -358,6 +358,10 @@ header{
 .more-vehicles p{
     margin-top: 2rem;
     padding-left: 5px;
+    /* font-weight: bold; */
+}
+
+.more-vehicles-text{
     font-weight: bold;
 }
 
@@ -449,6 +453,9 @@ header{
     color: green;    
 }
 
+.vehicles-container .box .more-vehicles-cost p{
+    color: green;    
+}
 .vehicles-container .box p span{
     font-size: 0.8rem;
     font-weight: 500;
@@ -510,15 +517,23 @@ header{
     text-transform: uppercase;
 }
 
+.about-text .aboutus-topics{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
 .about-text p{
     margin: 0.5rem 0 1.4rem;
 }
 
 .about-text .btn{
-    padding: 10px 20px;
+    padding: 10px 10px;
     background: blue;
     color: #fff;
     border-radius: 0.9rem;
+    border: none;
+    cursor: pointer;
 }
 
 
@@ -1632,4 +1647,9 @@ img {
       text-align: center;
       margin-top: 15px;
   }
+
+.about-text .hidden-about-text{
+    display: none;
+}
+
 
