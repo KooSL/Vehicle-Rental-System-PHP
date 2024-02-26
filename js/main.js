@@ -145,3 +145,4 @@ function cupdatetoggle(){
 }
 
     
+const navLinksEls = document.querySelectorAll('.nav')
