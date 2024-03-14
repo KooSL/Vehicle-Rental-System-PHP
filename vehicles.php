@@ -61,7 +61,7 @@
                     ?>
                     <div class="box <?php echo strtolower($row['v_type']); ?>">
                         <div class="box-img">
-                            <a href="details.php?v_id=<?php echo $row['v_id'];?>"><img src="images/<?php echo $row['v_image1'];?>"></a>  
+                            <a href="details.php?v_id=<?php echo $row['v_id'];?>"><img src="uploads/<?php echo $row['v_image1'];?>"></a>  
                         </div>
                         <h3><?php echo $row['v_name'];?></h3>
                         <p><?php echo $row['v_fuel'];?></p>
@@ -82,7 +82,7 @@
                             echo '<a href="rent-now.php?v_id=' . $row['v_id'] . '" class="btn">Rent Now</a>';
                         }
                         else{
-                            echo '<a href="sign-up.php" class="btn">Rent Now</a>';
+                            echo '<a href="login.php" class="btn">Rent Now</a>';
                         }
                         ?>
                     </div>

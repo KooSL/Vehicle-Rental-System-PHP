@@ -39,7 +39,7 @@
                 ?>
                 <div class="box">
                     <div class="box-img">
-                        <img src="images/<?php echo $row['v_image1'];?>">  
+                        <img src="uploads/<?php echo $row['v_image1'];?>">  
                     </div>
 
                     <h3><?php echo $row2['b_vehicle'];?></h3>

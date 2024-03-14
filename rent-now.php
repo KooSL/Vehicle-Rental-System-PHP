@@ -51,17 +51,17 @@
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="images\<?php echo $row['v_image1'];?>" style="width:100%">
+                        <img src="uploads\<?php echo $row['v_image1'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">2 / 3</div> -->
-                        <img src="images\<?php echo $row['v_image2'];?>" style="width:100%">
+                        <img src="uploads\<?php echo $row['v_image2'];?>" style="width:100%">
                         <!-- <div class="text">Sunset in Romania</div> -->
                     </div>
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">3 / 3</div> -->
-                        <img src="images\<?php echo $row['v_image3'];?>" style="width:100%">
+                        <img src="uploads\<?php echo $row['v_image3'];?>" style="width:100%">
                         <!-- <div class="text">New York, USA</div> -->
                     </div>
                     <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-caret-left"></i></a>

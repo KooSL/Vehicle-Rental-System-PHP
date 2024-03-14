@@ -54,7 +54,7 @@
                 echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
             }
             else{
-                echo '<li><a href="sign-up.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
+                echo '<li><a href="login.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
                 echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
             }
             ?>

@@ -30,7 +30,7 @@
         </div>  
         <div class="profile-container">
             <div class="profile-img">
-                <img src="images\<?php echo $row['u_image'];?>" alt="">
+                <img src="uploads\<?php echo $row['u_image'];?>" alt="">
                 <!-- <img src="/home/linuxkali/Documents/My-VSCode/Vehicle-Rental-System-2/images/pngwing.com.png" alt=""> -->
             </div>
             <div class="about-text">

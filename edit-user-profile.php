@@ -22,6 +22,7 @@
     include 'container/db_connection.php';
     $result = mysqli_query($con, $qry);
     $row = mysqli_fetch_assoc($result);
+    
 ?> 
     
     <!--About-->
@@ -30,11 +31,11 @@
             <span>Edit Profile</span>
         </div>  
         <div class="edit-profile-container">
-            <form action="" class="profile-detail" method="POST">
+            <form action="" class="profile-detail" method="POST" enctype="multipart/form-data">
                 <div class="edit-profile-img">
                     <input type="hidden" name="u_id" value="<?php echo $row['u_id']; ?>">
                     <div class="upload">
-                        <img src="images/<?php echo $row['u_image']; ?>" id="image">
+                        <img src="uploads/<?php echo $row['u_image']; ?>" id="image">
                         <div class="rightRound" id="upload">
                             <input type="file" name="u_image" id="fileImg" accept=".jpg, .jpeg, .png">
                             <i class="fa fa-camera"></i>
@@ -95,8 +96,16 @@
 
 <?php
 if(isset($_POST['submit'])) {
+    $u_image_name = $row['u_image'];
     $u_name = $_POST['u_name'];
-    $u_image = $_POST['u_image'];
+
+    //$u_image = $_POST['u_image'];
+    $u_image = $_FILES['u_image']['name'];
+    $tmp_name = $_FILES['u_image']['tmp_name'];
+    $u_image = $u_image;
+    $filepath = "uploads/".$u_image;
+    move_uploaded_file($tmp_name, $filepath);
+
     $u_address = $_POST['u_address'];
     $u_email = $_POST['u_email'];
     $u_phone = $_POST['u_phone'];
@@ -105,7 +114,7 @@ if(isset($_POST['submit'])) {
 
     $qry2 = "UPDATE user_signup SET
               u_name = '$u_name', 
-              u_image = '$u_image', 
+              u_image = COALESCE('$u_image', '$u_image_name'),
               u_address = '$u_address', 
               u_email = '$u_email', 
               u_phone = '$u_phone',

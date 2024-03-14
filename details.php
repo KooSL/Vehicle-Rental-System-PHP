@@ -38,19 +38,19 @@
 
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="images/<?php echo $row['v_image1'];?>" style="width:100%">
+                        <img src="uploads/<?php echo $row['v_image1'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
 
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="images/<?php echo $row['v_image2'];?>" style="width:100%">
+                        <img src="uploads/<?php echo $row['v_image2'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
 
                     <div class="mySlides fade">
                         <!-- <div class="numbertext">1 / 3</div> -->
-                        <img src="images/<?php echo $row['v_image3'];?>" style="width:100%">
+                        <img src="uploads/<?php echo $row['v_image3'];?>" style="width:100%">
                         <!-- <div class="text">London, Ebgland</div> -->
                     </div>
     
@@ -114,7 +114,7 @@
                         echo '<button onclick="location.href = \'rent-now.php?v_id=' . $row['v_id'] . '\'" id="rentnowbtn">Rent Now</button>';
                     }
                     else{
-                        echo '<button onclick="location.href = \'sign-up.php\'" id="rentnowbtn">Rent Now</button>';
+                        echo '<button onclick="location.href = \'login.php\'" id="rentnowbtn">Rent Now</button>';
                     }
                     ?> 
                 </div>
@@ -139,7 +139,7 @@
                         while($rows = mysqli_fetch_assoc($result2)) { ?>
                             <div class="box">
                                 <div class="box-img">
-                                    <img src="images/<?php echo $rows['v_image1'];?>">  
+                                    <img src="uploads/<?php echo $rows['v_image1'];?>">  
                                 </div>
                                 <h3><?php echo $rows['v_name'];?></h3>
                                 <p><?php echo $rows['v_fuel'];?></p>
