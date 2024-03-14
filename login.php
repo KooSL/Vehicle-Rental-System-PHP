@@ -38,7 +38,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $u_username = $_POST['u_email'];
     $u_password = $_POST['u_password'];
-    // $hashed_password = md5($u_password);
     
 
     $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username' AND u_password = '$u_password' ";
