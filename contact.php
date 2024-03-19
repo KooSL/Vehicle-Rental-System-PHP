@@ -30,7 +30,7 @@
                 <input type="text" name="cnt_phone" placeholder="Phone Number" required>
                 <textarea class="c-message" name="cnt_message" rows="4" required placeholder="Message"></textarea>
             </div>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="cnt_submit" value="Submit">
         </div>
 </form>
 
@@ -39,24 +39,24 @@
         <h2>Subscribe for Updates</h2>
         <form action="" method="POST" class="subscriber">
             <div class="box">
-                <input name="subs_email" type="email" placeholder="Enter Your Email" required><br>
-                <button type="submit" name="subscribe" value="subscribe">Subscribe</button>
+                <input type="email" name="subs_email"  placeholder="Enter Your Email" required><br>
+                <button type="submit" name="subs_submit" value="subscribe">Subscribe</button>
             </div>
         </form>
     </section>
 
 
 <?php
-if(isset($_POST['submit']))
+if(isset($_POST['cnt_submit']))
 {
     $cnt_name = $_POST['cnt_name'];
     $cnt_email = $_POST['cnt_email'];
     $cnt_phone = $_POST['cnt_phone'];
     $cnt_message = $_POST['cnt_message'];
 
-    $qry = "INSERT INTO contact (cnt_name, cnt_email, cnt_phone, cnt_message) VALUES ('$cnt_name', '$cnt_email', '$cnt_phone', '$cnt_message')";
+    $cnt_qry = "INSERT INTO contact (cnt_name, cnt_email, cnt_phone, cnt_message) VALUES ('$cnt_name', '$cnt_email', '$cnt_phone', '$cnt_message')";
     include 'container/db_connection.php';
-    if(mysqli_query($con, $qry))
+    if(mysqli_query($con, $cnt_qry))
         {
             echo '<script type="text/javascript"> alert("Submited Successfully!");</script>';
         }
@@ -64,15 +64,14 @@ if(isset($_POST['submit']))
         {
             echo '<script type="text/javascript"> alert("Something Went Wrong!");</script>';
         }
-    }
+}
 
-elseif(isset($_POST['subscribe']))
+if(isset($_POST['subs_submit']))
         {
             $subs_email = $_POST['subs_email'];
 
-            $qry = "INSERT INTO subscribers (sub_email) VALUES ('$subs_email')";
-            include 'container/db_connection.php';
-            if(mysqli_query($con, $qry))
+            $subs_qry = "INSERT INTO subscribers (sub_email) VALUES ('$subs_email')";
+            if(mysqli_query($con, $subs_qry))
                 {
                     echo '<script type="text/javascript"> alert("Subscribed Successfully!");</script>';
                 }
@@ -80,6 +79,7 @@ elseif(isset($_POST['subscribe']))
                 {
                     echo '<script type="text/javascript"> alert("Something Went Wrong!");</script>';
                 }
+                
         }
 
 

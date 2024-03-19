@@ -19,13 +19,15 @@
     
 
 <div class="signup-body">
-    <form action="" class="sign-up" method="POST">
+    <form action="" class="sign-up" method="POST" name="sign-up" onsubmit="return validateForm()">
         <div class="sign-up-form">
             <p class="signup-txt"><i class="fa-solid fa-user-plus"></i> Sign Up<p>
             <div class="s-inputs">
-            <input type="text" name="u_name" placeholder="Full Name" required>
+            <!-- <input type="text" name="u_name" placeholder="Full Name" required> -->
+            <input type="text" name="u_name" placeholder="Full Name" required pattern="[a-zA-Z\s]+" title="Please enter a valid name (letters and spaces only)">
             <input type="text" name="u_address" placeholder="Address" required>
-            <input type="text" name="u_email" placeholder="Email" required>
+            <!-- <input type="text" name="u_email" placeholder="Email" required> -->
+            <input type="email" name="u_email" placeholder="Email" required>
             <input type="text" name="u_phone" placeholder="Phone Number" required maxlength="15">
             <select name="u_gender" id="gender" required>
                 <option value="Gender">Gender</option>
@@ -67,6 +69,7 @@ if(isset($_POST['submit']))
 
     if($u_password == $u_cpassword)
     {
+        $u_password = md5($u_password);
         $qry = "INSERT INTO user_signup (u_name, u_address, u_email, u_phone, u_gender, u_password) VALUES ('$u_name', '$u_address', '$u_email', '$u_phone', '$u_gender', '$u_password')";
         include 'container/db_connection.php';
         if(mysqli_query($con, $qry))
@@ -82,7 +85,7 @@ if(isset($_POST['submit']))
     }
     else
     {
-        echo '<script type="text/javascript"> alert("Password Doesnt Match!"); window.location.assign("signup.php"); </script>';
+        echo '<script type="text/javascript"> alert("Password Doesnt Match!"); window.location.assign("sign-up.php"); </script>';
     }
 }
 
@@ -96,5 +99,35 @@ if(isset($_POST['submit']))
 
 
 
+<script>
+    function validateForm() {
+        var name = document.forms["sign-up"]["u_name"].value;
+        var email = document.forms["sign-up"]["u_email"].value;
+        var password = document.forms["sign-up"]["u_password"].value;
 
-`
+        // Name validation
+        var nameRegex = /^[a-zA-Z\s]+$/;
+        if (!nameRegex.test(name)) {
+            alert("Please enter a valid name (letters and spaces only)");
+            return false;
+        }
+
+        // Email validation
+        var emailRegex = /^[^\d\s][\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        // Password validation
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+        if (!passwordRegex.test(password)) {
+            alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+            return false;
+        }
+
+
+        return true;
+    }
+</script>
+

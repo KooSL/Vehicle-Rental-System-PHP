@@ -45,7 +45,7 @@
           <tr>
             <td style="width:170px; font-size: 13px"><?php echo $row['b_id'];?></td>
             <td style="width:170px; font-size: 13px"><?php echo $row['b_name'];?></td>
-            <td><img src="../uploads/<?php echo $row['bv_image'];?>" alt="" style="width:100px"></td>
+            <td><img src="../uploads/<?php echo $row['bv_image'];?>" alt="" style="width:100px; height:100px"></td>
             <td  style="width:170px; font-size: 13px"><?php echo $row['b_email'];?></td>
             <td  style="width:170px; font-size: 13px"><?php echo $row['b_vehicle'];?></td>
             <td  style="width:170px; font-size: 13px"><?php echo $row['b_address'];?></td>
