@@ -62,7 +62,7 @@
             <td><?php echo $row['v_cost'];?></td>
             <td><?php echo $row['v_cunit'];?></td>
             <td style="width:170px; font-size: 13px"><?php echo $row['v_description'];?></td>
-            <td><img src="../images/<?php echo $row['v_image1'];?>" alt="" style="width:100px"></td>
+            <td><img src="../uploads/<?php echo $row['v_image1'];?>" alt="" style="width:100px; height:100px"></td>
             <td><?php echo $row['v_status'];?></td>
             <td>
               <a href="edit-vehicle.php?v_id=<?php echo $row['v_id'];?>" class="confirm"><i class="fa-solid fa-pen"></i></a>

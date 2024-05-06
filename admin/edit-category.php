@@ -32,9 +32,9 @@
     <div class="add-vehicle">
         <form action="" method="POST">
           <label for="cars">Vehicle Category: </label>
-                  <input type="text" name="c_name" placeholder="Category" required value="<?php echo $row['c_name'];?>"><br>
+                  <input type="text" name="c_name" placeholder="Category" required value="<?php echo $row['c_name'];?>" pattern="[a-zA-Z\s]+" title="Please enter a valid name (letters and spaces only)"><br>
           <label for="cars">Vehicle Type: </label>
-                  <input type="text" name="c_type" placeholder="Type" required value="<?php echo $row['c_type'];?>"><br>
+                  <input type="text" name="c_type" placeholder="Type" required value="<?php echo $row['c_type'];?>" pattern="[a-zA-Z\s]+" title="Please enter a valid name (letters and spaces only)"><br>
           <button type="submit" name="submit"><i class="fa-solid fa-check"></i> Save</button>
           <a href="categories.php" class="exit-btn"><i class="fa-solid fa-xmark"></i> Cancel</a>
         </form>

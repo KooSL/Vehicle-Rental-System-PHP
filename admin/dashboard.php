@@ -70,14 +70,6 @@
         <P>Queries</P>
         <a href="queries.php" class="btn">View Details</a>
       </div>
-      <!-- <div class="card">
-        <P></P>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <div class="card">
-        <P></P>
-        <a href="#" class="btn">View Details</a>
-      </div> -->
     </div>
     
   </main>

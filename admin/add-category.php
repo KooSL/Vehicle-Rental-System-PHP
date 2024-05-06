@@ -22,11 +22,11 @@
       <!-- <a href="#"><i class="fa-solid fa-check"></i> Save</a> -->
     </section>
     <div class="add-vehicle">
-        <form action="" method="POST">
+        <form action="" method="POST" name="category" onsubmit="return validateForm()">
             <label for="cars">Vehicle Category: </label>
-                <input type="text" name="c_name" placeholder="Category" required><br>
+                <input type="text" name="c_name" placeholder="Category" required pattern="[a-zA-Z\s]+" title="Please enter a valid name (letters and spaces only)"><br>
             <label for="cars">Vehicle Type: </label>
-                <input type="text" name="c_type" placeholder="Type" required><br>
+                <input type="text" name="c_type" placeholder="Type" required pattern="[a-zA-Z\s]+" title="Please enter a valid name (letters and spaces only)"><br>
             <button type="submit" name="submit"><i class="fa-solid fa-check"></i> Upload</button>
             <a href="categories.php" class="exit-btn"><i class="fa-solid fa-xmark"></i> Cancel</a>
         </form>

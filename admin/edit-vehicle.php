@@ -33,13 +33,13 @@
       <!-- <a href="#"><i class="fa-solid fa-check"></i> Save</a> -->
     </section>
     <div class="add-vehicle">
-    <form action="edit-vehicle.php?v_id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+    <form action="edit-vehicle.php?v_id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data" name="editvehicle" onsubmit="return validateForm()">
             <label for="cars">Vehicle Name: </label>
                 <input type="text" name="v_name" placeholder="Name" required value="<?php echo $row['v_name'];?>"><br>
             <label for="type">Choose the category:</label>
                 <select name="v_type" id="type" required ">
                 <?php while($row2 = mysqli_fetch_assoc($result2)){  ?>
-                    <option><?php echo $row2['c_name'];?></option>
+                    <option><?php echo $row2['c_name'];?> - <?php echo $row2['c_type'];?></option>
                 <?php } ?>
                 </select><br>
             <label for="fuel">Choose the fuel:</label>
@@ -50,9 +50,9 @@
                     <option value="ev">EV</option>
                 </select><br>
             <label for="cars">Vehicle Seat:</label>
-                <input type="number" name="v_seat" placeholder="Seat Number" value="<?php echo $row['v_seat'];?>"><br>
+                <input type="number" name="v_seat" placeholder="Seat Number" value="<?php echo $row['v_seat'];?>" required><br>
             <label for="v_number">Vehicle Number:</label>
-                <input type="text" name="v_number" placeholder="Number" value="<?php echo $row['v_number'];?>" required><br>
+                <input type="text" name="v_number" placeholder="Number" value="<?php echo $row['v_number'];?>"><br>
             <label for="cars">Vehicle Cost:</label>
                 <input type="text" name="v_cost" placeholder="Cost (Rs.)" value="<?php echo $row['v_cost'];?>" required><br>
             <label for="cunit">Vehicle Cost Unit:</label>
@@ -65,7 +65,7 @@
                         <option value="year">year</option>
                     </select><br>
             <label for="cars">Vehicle Image:</label><br>
-                <input type="file" name="photopath1" class="v_image1" value="<?php echo $row['v_image1'];?>"><br>
+                <input type="file" name="photopath1" class="v_image1" value="<?php echo $row['v_image1'];?>" required><br>
                 <input type="file" name="photopath2" class="v_image2" ><br>
                 <input type="file" name="photopath3" class="v_image3" ><br>
             <label for="cars">Vehicle Description:</label><br>
@@ -122,6 +122,22 @@ if(isset($_POST['submit'])) {
 
 
   </main>
+
+<script>
+    function validateForm() {
+        var seat = document.forms["editvehicle"]["v_seat"].value;
+
+        // Seat validation
+        if (seat < 1) {
+            alert("Seat number should be 1 or greater!");
+            return false;
+        }
+
+
+        return true;
+}
+</script>
+
 </body>
 </html>
 

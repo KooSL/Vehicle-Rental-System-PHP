@@ -28,7 +28,7 @@
       <!-- <a href="#"><i class="fa-solid fa-check"></i> Save</a> -->
     </section>
     <div class="add-vehicle">
-        <form action="add-vehicles.php" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data" name="addvehicle" onsubmit="return validateForm()">
             <label for="cars">Vehicle Name: </label>
                 <input type="text" name="v_name" placeholder="Name" required><br>
             <label for="type">Choose the category:</label>
@@ -39,7 +39,7 @@
                 </select><br>
             <label for="fuel">Choose the fuel:</label>
                 <select name="v_fuel" id="fuel">
-                    <option value="Select">Select</option>
+                    <option value="None">Select</option>
                     <option value="None">None</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
@@ -48,7 +48,7 @@
                     <option value="Hybrid">Hybrid</option>
                 </select><br>
             <label for="cars">Vehicle Seat:</label>
-                <input type="number" name="v_seat" placeholder="Seat Number"><br>
+                <input type="number" name="v_seat" placeholder="Seat Number" required><br>
             <label for="cars">Vehicle Number:</label>
                 <input type="text" name="v_number" placeholder="Number"><br>
             <label for="cars">Vehicle Cost:</label>
@@ -90,11 +90,30 @@ if(isset($_POST['submit']))
     $v_number = $_POST['v_number'];
     $v_cost = $_POST['v_cost'];
     $v_cunit = $_POST['v_cunit'];
-    $v_image1 = $_POST['v_image1'];
-    $v_image2 = $_POST['v_image2'];
-    $v_image3 = $_POST['v_image3'];
+    //$v_image1 = $_POST['v_image1'];
+    //$v_image2 = $_POST['v_image2'];
+    //$v_image3 = $_POST['v_image3'];
     $v_description = $_POST['v_description'];
     $v_status = $_POST['v_status'];
+
+    $v_image1 = $_FILES['v_image1']['name'];
+    $tmp_name = $_FILES['v_image1']['tmp_name'];
+    $v_image1 = time().$v_image1;
+    $filepath = "../uploads/".$v_image1;
+    move_uploaded_file($tmp_name, $filepath);
+
+    $v_image2 = $_FILES['v_image2']['name'];
+    $tmp_name = $_FILES['v_image2']['tmp_name'];
+    $v_image2 = time().$v_image2;
+    $filepath = "../uploads/".$v_image2;
+    move_uploaded_file($tmp_name, $filepath);
+
+    $v_image3 = $_FILES['v_image3']['name'];
+    $tmp_name = $_FILES['v_image3']['tmp_name'];
+    $v_image3 = time().$v_image3;
+    $filepath = "../uploads/".$v_image3;
+    move_uploaded_file($tmp_name, $filepath);
+
 
     $qry = "INSERT INTO vehicles (v_name, v_type, v_fuel, v_seat, v_number, v_cost, v_cunit, v_image1, v_image2, v_image3, v_description, v_status) VALUES ('$v_name', '$v_type', '$v_fuel', '$v_seat', '$v_number', '$v_cost', '$v_cunit', '$v_image1', '$v_image2', '$v_image3', '$v_description', '$v_status')";
     include 'admin-container/db_connection.php';
@@ -114,6 +133,20 @@ if(isset($_POST['submit']))
 
 </main>
 
+<script>
+    function validateForm() {
+        var seat = document.forms["addvehicle"]["v_seat"].value;
+
+        // Seat validation
+        if (seat < 1) {
+            alert("Seat number should be 1 or greater!");
+            return false;
+        }
+
+
+        return true;
+    }
+</script>
 
 
 </body>
