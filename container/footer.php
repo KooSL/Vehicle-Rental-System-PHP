@@ -17,12 +17,22 @@
             </div> -->
             <div class="col">
                 <ul class="footer-menu">
+                <?php if(isset($_SESSION['username'])){ ?>
+                    <!-- <li><a href="admin\admin-login.php">Admin</a></li> -->
+                    <li><a href="vehicles.php">Categories</a></li>
+                    <!-- <li><a href="#payment">Payment</a></li> -->
+                    <li><a href="career.php">Career</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="about.php">About</a></li>
+                <?php } else{ ?>
                     <li><a href="admin\admin-login.php">Admin</a></li>
                     <li><a href="vehicles.php">Categories</a></li>
                     <!-- <li><a href="#payment">Payment</a></li> -->
                     <li><a href="career.php">Career</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="about.php">About</a></li>
+                <?php } ?>
+                
                 </ul>
             </div>
             <div class="col">

@@ -26,7 +26,7 @@
             <li><a href="reviews.php" class="btn">Reviews</a></li>
             <li><a href="contact.php" class="btn">Contact</a></li>
             <li><a href="about.php" class="btn">About</a></li>
-            <li><a href="admin\dashboard.php">Dashboard</a></li>
+            <!-- <li><a href="admin\dashboard.php">Dashboard</a></li> -->
         </ul>
 
         <div class="header-btn">
