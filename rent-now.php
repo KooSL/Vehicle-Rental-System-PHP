@@ -117,21 +117,13 @@
                     <label for="message">Message:</label><br>
                         <textarea name="message" id="message" placeholder="Message" required></textarea><br>
 
-
-                    <!-- <p>payment Details</p>
-                    <label for="name">Name on Card:</label>
-                        <input type="text" name="crd_name" id="name" placeholder="Name" required><br>
-                    <label for="number">Card Number:</label>
-                        <input type="number" name="crd_number" id="number" placeholder="Number" required><br>
-                    <label for="expdate">Exp. Date:</label>
-                        <input type="date" name="crd_expdate" id="expdate" required><br>
-                    <label for="cvv">CVV Number:</label>
-                        <input type="number" name="crd_cvv" id="cvv" placeholder="CVV" required><br> -->
-
-
                     <div class="payorcancel">
                         <div class="pay-now-btn">
-                            <button type="submit" name="submit" id="paynowbtn">Book</button>
+                            <?php if($row['v_status'] == "Unavailable"){ ?>
+                                <button  id="paynowbtn">Unavailable</button>
+                            <?php } else {?>
+                                <button type="submit" name="submit" id="paynowbtn">Book</button>
+                            <?php } ?>
                         </div>
                         <div class="cancel-btn">
                             <a onclick="location.href = 'details.php?v_id=<?php echo $row['v_id'];?>';" id="cancel">Cancel</a>

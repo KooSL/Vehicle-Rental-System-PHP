@@ -73,13 +73,11 @@
                     <!-- <a href="details.php?v_id=<?php echo $row['v_id'];?>" class="btn">Details</a> -->
                     <?php
                         $status = $row2['b_status'];
-                        if($status == "Confirmed"){
-                            echo '<a href="#" class="btn">Cancel Booking</a>';
-                        }
-                        elseif($status == "Canceled"){
-                            echo '<a href="#" class="btn">Confirm Booking</a>';
-                        }
-                    ?>
+                        if($status == "Confirmed"){ ?>
+                            <a href="my-bookings.php?cancel_bid=<?php echo $row2['b_id'];?>" class="btn"  onclick="return confirm('Are you sure to cancel booking?')">Cancel Booking</a>
+                        <?php } elseif($status == "Canceled"){ ?>
+                            <a href="my-bookings.php?confirm_bid=<?php echo $row2['b_id'];?>" class="btn"  onclick="return confirm('Are you sure to confirm booking?')">Confirm Booking</a>
+                        <?php } ?>
                 </div>
                 <?php } 
 
@@ -127,3 +125,19 @@
 
 </body>
 </html>
+
+<?php
+if (isset($_GET['cancel_bid'])) {
+    $cancel_bid = $_GET['cancel_bid'];
+    $bstatus = "Canceled";
+    $qry5 = "UPDATE bookings SET b_status = '$bstatus' WHERE b_id = '$cancel_bid'";
+    $result3 = mysqli_query($con, $qry5);
+
+} elseif (isset($_GET['confirm_bid'])) {
+    $confirm_bid = $_GET['confirm_bid'];
+    $bstatus = "Confirmed";
+    $qry7 = "UPDATE bookings SET b_status = '$bstatus' WHERE b_id = '$confirm_bid'";
+    $result7 = mysqli_query($con, $qry7);
+
+}
+?>

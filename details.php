@@ -111,7 +111,11 @@
                 </div> -->
                 <div class="rent-now-btn">
                     <?php if(isset($_SESSION['username'])){
-                        echo '<button onclick="location.href = \'rent-now.php?v_id=' . $row['v_id'] . '\'" id="rentnowbtn">Rent Now</button>';
+                        if ($row['v_status'] == "Unavailable"){
+                        echo '<button onclick="" id="rentnowbtn">Unavailable Now</button>';
+                        } else {
+                            echo '<button onclick="location.href = \'rent-now.php?v_id=' . $row['v_id'] . '\'" id="rentnowbtn">Rent Now</button>';
+                        }
                     }
                     else{
                         echo '<button onclick="location.href = \'login.php\'" id="rentnowbtn">Rent Now</button>';
@@ -139,7 +143,7 @@
                         while($rows = mysqli_fetch_assoc($result2)) { ?>
                             <div class="box">
                                 <div class="box-img">
-                                    <img src="uploads/<?php echo $rows['v_image1'];?>">  
+                                    <img class="sug-img" src="uploads/<?php echo $rows['v_image1'];?>">  
                                 </div>
                                 <h3><?php echo $rows['v_name'];?></h3>
                                 <p><?php echo $rows['v_fuel'];?></p>

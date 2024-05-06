@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/ae61999827.js"></script>
     <script src="js\main.js"></script>
-    <!-- <style>
-        body{
-            background-image: url('images\Background-image-2.png');
-        }
-    </style> -->
 </head>
 <body>
     <!--Header-->
@@ -37,16 +32,6 @@
         <div class="text"> 
             <h1>Adventure with just a<span> click</span>, <br>Rent Your ride online <span>today! </span></h1><br><br>
     
-            <!-- <div class="browse-list-2"> -->
-                <!-- <?php if(isset($_SESSION['username'])){
-                //     echo '<li><a href="vehicles.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
-                //     echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
-                // }
-                // else{
-                //     echo '<li><a href="sign-up.php"><i class="fa-solid fa-user-plus"></i> Book Now</a></li>';
-                //     echo '<li><a href="vehicles.php"><i class="fa-solid fa-search"></i> Explore</a></li>';
-                }
-                ?> -->
             <!-- </div> -->
             <div class="browse-list-2">
             <?php if(isset($_SESSION['username'])){
@@ -60,12 +45,6 @@
             ?>
             </div>
         </div>
-
-        <!-- <div class="browse-2">
-            <ul class="browse-list">
-                
-            </ul>
-        </div> -->
 
     </section>
     <!--Ride-->
@@ -121,18 +100,9 @@
         </div>
     </section>
     
-        <!-- <h2>Subscribe To Newsletter</h2>
-        <div class="box">
-            <input type="text" placeholder="Enter Your Email...">
-            <a href="#" class="btn">Subscribe</a>
-        </div> -->
-
     <?php
         include 'container/footer.php';
     ?>
-    
-    <!--scrollReveal-->
-    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
     
 </body>
 </html>

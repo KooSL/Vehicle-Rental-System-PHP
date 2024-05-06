@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <?php
     $vehicleType = isset($_GET['v_type']) ? $_GET['v_type'] : 'all';
 ?>
@@ -79,6 +73,7 @@
                         </div>
                         <a href="details.php?v_id=<?php echo $row['v_id'];?>" class="btn">Details</a>
                         <?php if(isset($_SESSION['username'])){
+                            
                             echo '<a href="rent-now.php?v_id=' . $row['v_id'] . '" class="btn">Rent Now</a>';
                         }
                         else{

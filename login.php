@@ -39,8 +39,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $u_username = $_POST['u_email'];
     $u_password = $_POST['u_password'];
     
-
-    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username' AND u_password = '$u_password' ";
+    // $encrypted_u_password = md5($u_password);
+    $encrypted_u_password = $u_password;
+    $qry = "SELECT * FROM user_signup WHERE u_email = '$u_username' AND u_password = '$encrypted_u_password' ";
     include 'container/db_connection.php';
     $result = mysqli_query($con, $qry);
     if(mysqli_num_rows($result) == 1)

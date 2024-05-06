@@ -28,9 +28,9 @@
             <input type="text" name="u_address" placeholder="Address" required>
             <!-- <input type="text" name="u_email" placeholder="Email" required> -->
             <input type="email" name="u_email" placeholder="Email" required>
-            <input type="text" name="u_phone" placeholder="Phone Number" required maxlength="15">
+            <input type="text" name="u_phone" placeholder="Phone Number" required maxlength="15" minlength="10">
             <select name="u_gender" id="gender" required>
-                <option value="Gender">Gender</option>
+                <option value="None">Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
@@ -69,7 +69,7 @@ if(isset($_POST['submit']))
 
     if($u_password == $u_cpassword)
     {
-        $u_password = md5($u_password);
+        // $u_password = md5($u_password);
         $qry = "INSERT INTO user_signup (u_name, u_address, u_email, u_phone, u_gender, u_password) VALUES ('$u_name', '$u_address', '$u_email', '$u_phone', '$u_gender', '$u_password')";
         include 'container/db_connection.php';
         if(mysqli_query($con, $qry))

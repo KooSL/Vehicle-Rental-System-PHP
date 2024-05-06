@@ -31,7 +31,7 @@
             <span>Edit Profile</span>
         </div>  
         <div class="edit-profile-container">
-            <form action="" class="profile-detail" method="POST" enctype="multipart/form-data">
+            <form action="" class="profile-detail" method="POST" enctype="multipart/form-data" name="editprofile" onsubmit="return validateForm()">
                 <div class="edit-profile-img">
                     <input type="hidden" name="u_id" value="<?php echo $row['u_id']; ?>">
                     <div class="upload">
@@ -180,3 +180,16 @@ if(isset($_POST['submit'])) {
 </body>
 </html>
 
+<script>
+    function validateForm() {
+        var password = document.forms["editprofile"]["u_password"].value;
+
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+        if (!passwordRegex.test(password)) {
+            alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+            return false;
+        }
+
+        return true;
+    }
+</script>

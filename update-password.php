@@ -23,7 +23,7 @@
     // $row = mysqli_fetch_assoc($result);
 ?> 
 
-        <form action="" class="update-password-form" method="POST">
+        <form action="" class="update-password-form" method="POST" name="updatepw" onsubmit="return validateForm()">
             <p class="change-password-txt"><i class="fa-solid fa-lock"></i> Change Password</p>
                 <div class="update-password-box">
                     <input type="password" name="new_password" placeholder="New Password" id="updatepassword" required>
@@ -72,3 +72,25 @@ if(isset($_POST['submit']))
 
 </body>
 </html>
+
+<script>
+    function validateForm() {
+        var npassword = document.forms["updatepw"]["new_password"].value;
+        var cpassword = document.forms["updatepw"]["c_password"].value;
+
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+        if (!passwordRegex.test(npassword)) {
+            alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+            return false;
+        }
+
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+        if (!passwordRegex.test(cpassword)) {
+            alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character");
+            return false;
+        }
+
+
+        return true;
+    }
+</script>
